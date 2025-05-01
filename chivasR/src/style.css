@@ -1,0 +1,27 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333333;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  nav {
+    margin: 0;
+    padding: 10px 0;
+  }
+  
+  nav li {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+
+    display: inline-block;
+    width: 365px;  
+    height: 5px;
+  }
