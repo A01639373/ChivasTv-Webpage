@@ -3,11 +3,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+
+const Header = ({ showSearch, setShowSearch }) => {
   const [showSections, setShowSections] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-
   const dropdownRef = useRef(null);
   const searchInputRef = useRef(null);
 
@@ -75,9 +75,11 @@ const Header = () => {
         <span className="icon" onClick={() => setShowSearch(!showSearch)}>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </span>
-        <button className="btn-login">Iniciar sesión</button>
-        <button className="btn-signup">Regístrate</button>
+        
+        <Link to="/login" className="btn-login">Iniciar sesión</Link>
+        <Link to="/register" className="btn-signup">Regístrate</Link>
       </div>
+
 
       {showSearch && (
         <div className="search-full">

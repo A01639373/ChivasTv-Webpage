@@ -1,21 +1,81 @@
-.main-image-container {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-}
-
 .main-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 500px;
+  background-size: cover;
+  background-position: center 20%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 60px;
 }
 
-.caption {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background-color: rgba(0, 0, 0, 0.6);
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 10px;
   color: white;
-  padding: 5px 10px;
+}
+
+.overlay h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.overlay button {
+  background-color: #e53935;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls .arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.arrow.left {
+  left: 20px;
+}
+
+.arrow.right {
+  right: 20px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: white;
+}
+
+.with-search {
+  padding-top: 100px; /* ajusta según altura de la barra */
+  transition: padding-top 0.3s ease;
 }
