@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background: linear-gradient(to right, #283593 20%, #fff 20%, #fff 70%, #E53935 70%);
+  padding: 0 20px;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin: 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  margin-right: 20px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #03A9F4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu-item {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: black;
+}
