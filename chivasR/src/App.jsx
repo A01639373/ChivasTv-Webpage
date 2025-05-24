@@ -1,19 +1,15 @@
-// App.jsx
-import React from 'react';
-import Header from './components/Header.jsx'; 
-import Sidebar from './components/sidebar.jsx';
-import MainImage from './components/mainimage.jsx';
-import './styles/App.css';
+import React from "react";
+import MainImage from "./components/MainImage.jsx";
+import Header from "./components/Header.jsx";
 
-const App = () => (
-  <div className="app">
-    <Header />
-    <div className="content">
-      <Sidebar />
+function App() {
+  return (
+    <>
+      <Header />
       <MainImage />
-    </div>
-  </div>
-);
+      {/* otros componentes */}
+    </>
+  );
+}
 
 export default App;
-

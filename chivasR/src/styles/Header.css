@@ -1,55 +1,170 @@
+/* ===============================
+   CHIVASTV HEADER STYLES
+
+/* ---------- ESTRUCTURA PRINCIPAL ---------- */
 .header {
-  display: flex;
-  align-items: center;
-  height: 60px;
-  background: linear-gradient(to right, #283593 20%, #fff 20%, #fff 70%, #E53935 70%);
-  padding: 0 20px;
-}
-
-.left {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  margin: 0;
-  font-size: 2em;
-  font-weight: bold;
+  width: 100%;
+  background-color: #e53935;
   color: white;
-}
-
-.right {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-family: 'AntartidaRounded-Bold', sans-serif;
 }
 
-.social-icons {
+.header-left .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+/* ---------- MENÚ DE NAVEGACIÓN ---------- */
+.nav-menu {
   display: flex;
-  margin-right: 20px;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  margin-left: 25px;
+}
+
+.nav-item {
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+}
+
+.nav-item.live {
+  color: white;
+  font-weight: bold;
+}
+
+/* ---------- DROPDOWN MULTICOLUMNA ---------- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0c2869;
+  padding: 20px 30px;
+  border-radius: 8px;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 5px 40px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.dropdown-item {
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 4px 0;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+.dropdown-item:hover {
+  background-color: #1A2C5C;
+  padding-left: 5px;
+  transition: 0.2s ease;
+  border-radius: 3px;
+}
+
+/* ---------- ANIMACIONES ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- HEADER DERECHO ---------- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-login,
+.btn-signup {
+  background-color: #0c2869;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  font-size: 0.85em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+  background-color: #1a3a85;
+  transform: scale(1.05);
 }
 
 .icon {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: #03A9F4;
+  margin-right: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.icon svg {
+  font-size: 1.2em;
+  color: white;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon:hover svg {
+  color: #0c2869;
+  transform: scale(1.1);
+}
+
+/* ---------- BARRA DE BÚSQUEDA ---------- */
+.search-full {
+  font-family: 'AntartidaRounded-Bold', sans-serif;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #0c2869;
+  padding: 50px 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-right: 5px;
-  font-weight: bold;
+  z-index: 500;
+  animation: slideDown 0.3s ease-out;
+}
+
+.search-full input {
+  font-family: 'AntartidaRounded-Bold', sans-serif;
   color: white;
+  width: 45%;
+  max-width: 500px;
+  padding: 20px;
+  font-size: 1.4em;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  outline: none;
+  text-align: left;
+  padding-left: 10px;
 }
 
-.menu {
-  display: flex;
-  align-items: center;
+.search-full input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'AntartidaRounded-Bold', sans-serif;
 }
 
-.menu-item {
-  margin-left: 10px;
-  font-weight: bold;
-  font-size: 0.9em;
-  color: black;
+.search-full input:focus {
+  border-bottom: 2px solid #0c2869;
 }
