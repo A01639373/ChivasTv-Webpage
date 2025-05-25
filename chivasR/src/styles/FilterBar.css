@@ -1,0 +1,35 @@
+.filter-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px 45px 0; /* 🔽 reduce top y elimina bottom padding */
+  background-color: #0c2869;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  background-color: white;
+  color: #0c2869;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 20px; /* ✅ más redondeado */
+  font-weight: bold;
+  font-family: 'AntartidaRounded-Bold', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-width: 120px; /* ✅ más rectangulares */
+  text-align: center;
+}
+
+.filter-buttons button:hover {
+  background-color: #e53935;
+  color: white;
+}
+
+.filter-buttons .active {
+  background-color: #e53935;
+  color: white;
+  box-shadow: 0 0 0 2px white;
+}

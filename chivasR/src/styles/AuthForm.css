@@ -116,3 +116,12 @@
   overflow: hidden;
   clip: rect(0 0 0 0);
 }
+
+.error-text {
+  color: #ffd1d1;
+  font-size: 0.85em;
+  margin-top: -8px;
+  margin-bottom: 8px;
+  display: block;
+  text-align: left;
+}

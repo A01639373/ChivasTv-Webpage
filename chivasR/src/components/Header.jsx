@@ -1,17 +1,32 @@
-// Header.jsx completo con mejoras PRO
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
-
 
 const Header = ({ showSearch, setShowSearch }) => {
   const [showSections, setShowSections] = useState(false);
-  const dropdownRef = useRef(null);
-  const searchInputRef = useRef(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
-  const homeLinks = ["Destacados", "De Estreno"];
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const userEmail = localStorage.getItem('user');
+    setIsLoggedIn(!!token);
+    setUser(userEmail);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setIsLoggedIn(false);
+    navigate('/');
+  };
+
+  const homeLinks = [
+    "Destacados", "De Estreno"
+  ];
 
   const sectionLinks = [
     "Clásico De México", "Santuario Rojiblanco", "Raíces",
@@ -20,26 +35,6 @@ const Header = ({ showSearch, setShowSearch }) => {
     "Leyendas", "Historia Sagrada", "Nación Chivas", "Operación Valorant", "Esports",
     "El Podcast De Las Chivas", "El Recuerdo"
   ];
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setShowSections(false);
-      }
-    };
-    const handleEscKey = (event) => {
-      if (event.key === 'Escape') {
-        setShowSearch(false);
-        setShowSections(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleEscKey);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEscKey);
-    };
-  }, []);
 
   return (
     <header className="header">
@@ -53,11 +48,7 @@ const Header = ({ showSearch, setShowSearch }) => {
           <span key={index} className="nav-item">{link}</span>
         ))}
 
-        <div
-          className="nav-item dropdown"
-          onClick={() => setShowSections(!showSections)}
-          ref={dropdownRef}
-        >
+        <div className="nav-item dropdown" onClick={() => setShowSections(!showSections)}>
           Secciones ▾
           {showSections && (
             <div className="dropdown-menu">
@@ -72,23 +63,26 @@ const Header = ({ showSearch, setShowSearch }) => {
       </nav>
 
       <div className="header-right">
+        {isLoggedIn && user && (
+          <span className="user-greeting">Hola, {user.split('@')[0]}</span>
+        )}
         <span className="icon" onClick={() => setShowSearch(!showSearch)}>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </span>
-        
-        <Link to="/login" className="btn-login">Iniciar sesión</Link>
-        <Link to="/register" className="btn-signup">Regístrate</Link>
-      </div>
 
+        {!isLoggedIn ? (
+          <>
+            <Link to="/login" className="btn-login">Iniciar sesión</Link>
+            <Link to="/register" className="btn-signup">Regístrate</Link>
+          </>
+        ) : (
+          <button onClick={handleLogout} className="btn-login">Cerrar sesión</button>
+        )}
+      </div>
 
       {showSearch && (
         <div className="search-full">
-          <input
-            type="text"
-            placeholder="Buscar Partidos, Secciones o Momentos Chivas"
-            ref={searchInputRef}
-            autoFocus
-          />
+          <input type="text" placeholder="Buscar Partidos, Secciones o Momentos Chivas" />
         </div>
       )}
     </header>
