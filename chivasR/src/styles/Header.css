@@ -33,6 +33,7 @@
 }
 
 .nav-item {
+  color: white;
   font-size: 0.9em;
   font-weight: 500;
   cursor: pointer;

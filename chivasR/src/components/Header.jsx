@@ -3,19 +3,21 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { useLocation } from 'react-router-dom';
 
 const Header = ({ showSearch, setShowSearch }) => {
   const [showSections, setShowSections] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     const userEmail = localStorage.getItem('user');
     setIsLoggedIn(!!token);
     setUser(userEmail);
-  }, []);
+  }, [location]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -36,6 +38,14 @@ const Header = ({ showSearch, setShowSearch }) => {
     "El Podcast De Las Chivas", "El Recuerdo"
   ];
 
+  const formatRoute = (name) => {
+    return '/' + name
+      .toLowerCase()
+      .replace(/'/g, '')
+      .replace(/[^a-z0-9 ]/g, '')
+      .replace(/\s+/g, '-');
+  };
+
   return (
     <header className="header">
       <div className="header-left">
@@ -43,7 +53,7 @@ const Header = ({ showSearch, setShowSearch }) => {
       </div>
 
       <nav className="nav-menu">
-        <span className="nav-item">Home</span>
+        <Link to="/" className="nav-item">Home</Link>
         {homeLinks.map((link, index) => (
           <span key={index} className="nav-item">{link}</span>
         ))}
@@ -53,7 +63,14 @@ const Header = ({ showSearch, setShowSearch }) => {
           {showSections && (
             <div className="dropdown-menu">
               {sectionLinks.map((section, idx) => (
-                <div key={idx} className="dropdown-item">{section}</div>
+                <Link
+                  key={idx}
+                  to={formatRoute(section)}
+                  className="dropdown-item"
+                  onClick={() => setShowSections(false)}
+                >
+                  {section}
+                </Link>
               ))}
             </div>
           )}
