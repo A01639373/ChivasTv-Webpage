@@ -17,12 +17,12 @@
 }
 
 .overlay h1 {
-  font-size: 2.5em;
+  font-size: 40px;
   margin-bottom: 10px;
 }
 
 .overlay p {
-  font-size: 1.2em;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
@@ -31,7 +31,7 @@
   border: none;
   color: white;
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -39,7 +39,7 @@
 .controls .arrow {
   position: absolute;
   top: 50%;
-  font-size: 2em;
+  font-size: 32px;
   color: white;
   cursor: pointer;
   user-select: none;
@@ -76,6 +76,6 @@
 }
 
 .with-search {
-  padding-top: 100px; /* ajusta según altura de la barra */
+  padding-top: 100px;
   transition: padding-top 0.3s ease;
 }

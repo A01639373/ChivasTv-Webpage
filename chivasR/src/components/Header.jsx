@@ -49,7 +49,7 @@ const Header = ({ showSearch, setShowSearch }) => {
   return (
     <header className="header">
       <div className="header-left">
-        <div className="logo">CHIVASTV</div>
+        <a className="logo" href="/" >CHIVASTV</a>
       </div>
 
       <nav className="nav-menu">

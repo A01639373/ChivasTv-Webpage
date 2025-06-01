@@ -2,11 +2,11 @@
   max-width: 1200px;
   margin: auto;
   padding: 1px 50px;
-  background-color: #0c2869; /* fondo global azul Chivas */
+  background-color: #0c2869;
 }
 
 .section-title {
-  font-size: 1.8rem;
+  font-size: 16px;
   color: white;
   margin-bottom: 20px;
   text-align: left;
@@ -50,7 +50,7 @@
   position: absolute;
   top: 8px;
   right: 10px;
-  font-size: 0.75rem;
+  font-size: 12px;
   color: #0c2869;
   font-weight: bold;
   background-color: white;
@@ -60,11 +60,11 @@
 
 .card-title {
   margin-top: 12px;
-  font-size: 1rem;
+  font-size: 16px;
   color: white;
   text-align: left;
   font-family: 'AntartidaRounded-Bold', sans-serif;
   width: 100%;
-  padding-left: 12px;  /* Alineación manual a la izquierda */
+  padding-left: 12px;
   box-sizing: border-box;
 }

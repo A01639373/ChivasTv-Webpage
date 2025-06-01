@@ -18,9 +18,11 @@
 }
 
 .header-left .logo {
-  font-size: 1.8em;
+  font-size: 28px;
   font-weight: bold;
   margin-right: 30px;
+  color: white;
+
 }
 
 /* ---------- MENÚ DE NAVEGACIÓN ---------- */
@@ -34,7 +36,7 @@
 
 .nav-item {
   color: white;
-  font-size: 0.9em;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
@@ -63,7 +65,7 @@
 
 .dropdown-item {
   color: white;
-  font-size: 1em;
+  font-size: 16px;
   cursor: pointer;
   white-space: nowrap;
   padding: 4px 0;
@@ -72,7 +74,7 @@
 }
 
 .dropdown-item:hover {
-  background-color: #1A2C5C;
+  background-color: #0c2869;
   padding-left: 5px;
   transition: 0.2s ease;
   border-radius: 3px;
@@ -102,7 +104,7 @@
   border: none;
   color: white;
   padding: 6px 12px;
-  font-size: 0.85em;
+  font-size: 14px;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -110,7 +112,7 @@
 
 .btn-login:hover,
 .btn-signup:hover {
-  background-color: #1a3a85;
+  background-color: #0c2869;
   transform: scale(1.05);
 }
 
@@ -121,7 +123,7 @@
 }
 
 .icon svg {
-  font-size: 1.2em;
+  font-size: 20px;
   color: white;
   transition: transform 0.2s ease, color 0.2s ease;
 }
@@ -152,7 +154,7 @@
   width: 45%;
   max-width: 500px;
   padding: 20px;
-  font-size: 1.4em;
+  font-size: 22px;
   border: none;
   border-bottom: 2px solid white;
   background-color: transparent;
