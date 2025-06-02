@@ -7,6 +7,8 @@ import App from './App.jsx';
 import Header from './components/Header.jsx';
 import LoginForm from './components/LoginForm.jsx';
 import RegisterForm from './components/RegisterForm.jsx';
+import VideoDetail from './components/VideoDetail.jsx';
+
 
 import './index.css';
 
@@ -63,6 +65,7 @@ const Root = () => {
         <Route path="/resumen" element={<Resumen />} />
         <Route path="/santuario-rojiblanco" element={<SantuarioRojiblanco />} />
         <Route path="/subs" element={<Subs />} />
+        <Route path="/video/:id" element={<VideoDetail />} />
       </Routes>
     </BrowserRouter>
   );

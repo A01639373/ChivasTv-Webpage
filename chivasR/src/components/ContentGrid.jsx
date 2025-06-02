@@ -1,6 +1,7 @@
 // ContentGrid.jsx - Sección "Lo más nuevo"
 import React from 'react';
 import '../styles/ContentGrid.css';
+import { Link } from 'react-router-dom';
 
 const sampleContent = [
   {
@@ -51,12 +52,12 @@ const ContentGrid = ({ filter }) => {
       <h2 className="section-title">Lo más nuevo</h2>
       <div className="grid">
         {filteredContent.map(item => (
-          <div key={item.id} className="card">
+          <Link to={`/video/${item.id}`} key={item.id} className="card">
             <div className="image-placeholder">
               <p className="card-date">{item.date}</p>
             </div>
             <h3 className="card-title">{item.title}</h3>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
