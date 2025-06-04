@@ -27,7 +27,7 @@ const Header = ({ showSearch, setShowSearch }) => {
   };
 
   const homeLinks = [
-    "Destacados", "De Estreno"
+    "De Estreno"
   ];
 
   const sectionLinks = [
@@ -53,7 +53,7 @@ const Header = ({ showSearch, setShowSearch }) => {
       </div>
 
       <nav className="nav-menu">
-        <Link to="/" className="nav-item">Home</Link>
+        <Link to="/" className="nav-item">Inicio</Link>
         {homeLinks.map((link, index) => (
           <span key={index} className="nav-item">{link}</span>
         ))}
