@@ -4,7 +4,8 @@ import '../styles/MainImage.css';
 import slide1 from '../assets/Chivas_Partido.png'
 import slide2 from "../assets/Chivas_raices.png"
 import slide3 from "../assets/Chivas_fem.png"
-
+import leftArrow from '../assets/leftArrow.png'
+import rightArrow from '../assets/rightArrow.png'
 
 function MainImage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -19,9 +20,9 @@ function MainImage() {
     },
     {
       title: "RAICES",
-      subtitle: "Lorem Ipsum Lorem Ipsum",
+      subtitle: "Conoce la travesía detras de los jugadores y cuerpo tecnico de Chivas",
       img: slide2,
-      button: "Más contenido",
+      button: "Explorar",
       position: 'center 20%'
     },
     {
@@ -71,8 +72,12 @@ function MainImage() {
       </div>
 
       <div className="controls">
-        <span className="arrow left" onClick={prevSlide}>←</span>
-        <span className="arrow right" onClick={nextSlide}>→</span>
+        <span className="arrow left" onClick={prevSlide}>
+          <img src={leftArrow} className='arrowImg'></img>
+        </span>
+        <span className="arrow right" onClick={nextSlide}>
+          <img src={rightArrow} className='arrowImg'></img>
+        </span>
       </div>
 
       <div className="dots">

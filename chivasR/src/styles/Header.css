@@ -1,7 +1,3 @@
-/* ===============================
-   CHIVASTV HEADER STYLES
-
-/* ---------- ESTRUCTURA PRINCIPAL ---------- */
 .header {
   width: 100%;
   background-color: #e53935;
@@ -11,7 +7,7 @@
   justify-content: space-between;
   padding: 10px 20px;
   box-sizing: border-box;
-  position: sticky;
+  position: absolute;
   top: 0;
   z-index: 999;
   font-family: 'AntartidaRounded-Bold', sans-serif;
@@ -22,10 +18,9 @@
   font-weight: bold;
   margin-right: 30px;
   color: white;
-
+  text-decoration: none;
 }
 
-/* ---------- MENÚ DE NAVEGACIÓN ---------- */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -41,6 +36,7 @@
   cursor: pointer;
   white-space: nowrap;
   position: relative;
+  text-decoration: none;
 }
 
 .nav-item.live {
@@ -48,7 +44,11 @@
   font-weight: bold;
 }
 
-/* ---------- DROPDOWN MULTICOLUMNA ---------- */
+/*Secciones*/
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -61,6 +61,7 @@
   grid-template-columns: repeat(3, auto);
   gap: 5px 40px;
   animation: fadeIn 0.2s ease-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .dropdown-item {
@@ -71,31 +72,56 @@
   padding: 4px 0;
   line-height: 1.4;
   letter-spacing: normal;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .dropdown-item:hover {
-  background-color: #0c2869;
+  background-color: rgba(255, 255, 255, 0.1);
   padding-left: 5px;
-  transition: 0.2s ease;
   border-radius: 3px;
 }
 
-/* ---------- ANIMACIONES ---------- */
+
+/*Animaciones*/
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { 
+    opacity: 0; 
+    transform: translateY(-5px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
-/* ---------- HEADER DERECHO ---------- */
+.header-center {
+  align-items: center;
+}
+
+/*Usuario y login*/
 .header-right {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
+}
+
+.user-greeting {
+  color: white;
+  font-size: 14px;
+  margin-right: 10px;
 }
 
 .btn-login,
@@ -108,12 +134,138 @@
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-login:hover,
 .btn-signup:hover {
-  background-color: #0c2869;
+  background-color: #0a1f5c;
   transform: scale(1.05);
+}
+
+
+/*Perfil de usuario*/
+.user-menu {
+  position: relative;
+}
+
+.user-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 30px;
+  transition: transform 0.2s ease;
+  object-fit: cover;
+}
+
+.user-pic:hover {
+  transform: scale(1.1);
+}
+
+.right-menu-wrap {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 200px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  z-index: 1000;
+}
+
+.right-menu-wrap.open-menu {
+  max-height: 400px;
+}
+
+.right-menu {
+  background: #0c2869;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.menu-info:last-child {
+  margin-bottom: 0;
+}
+
+.icon-menu {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.menu-links {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  padding: 8px 5px;
+  border-radius: 5px;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.menu-links:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-links p {
+  margin: 0;
+  flex: 1;
+  font-size: 14px;
+}
+
+.menu-links span {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+}
+
+.menu-links:hover span {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+.menu-links:hover p {
+  font-weight: 600;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 10px;
+  }
+  
+  .nav-item {
+    font-size: 14px;
+  }
+  
+  .dropdown-menu {
+    grid-template-columns: repeat(2, auto);
+    gap: 5px 20px;
+    padding: 15px 20px;
+  }
+  
+  .user-pic {
+    width: 35px;
+    height: 35px;
+    margin-left: 15px;
+  }
+  
+  .right-menu-wrap {
+    width: 180px;
+  }
 }
 
 .icon {
@@ -132,6 +284,7 @@
   color: #0c2869;
   transform: scale(1.1);
 }
+
 
 /* ---------- BARRA DE BÚSQUEDA ---------- */
 .search-full {
