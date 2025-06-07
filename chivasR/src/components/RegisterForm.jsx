@@ -7,6 +7,14 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 const RegisterForm = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [address, setAddress] = useState('');
+  const [postal, setPostal] = useState('');
+  const [estado, setEstado] = useState('');
+  const [pais, setPais] = useState('');
+  const [genero, setGenero] = useState('');
+  const [ocupacion, setOcupacion] = useState('');
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});

@@ -4,8 +4,12 @@
     "title": "Clásico De México Video 1",
     "category": "Clásico De México",
     "type": "suscriptor",
+    "date": "10/10/2010",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "description": "Ejemplo de como se veria la descripcion",
+    "partido": true
+
   },
   {
     "id": 2,
@@ -109,7 +113,8 @@
     "category": "Santuario Rojiblanco",
     "type": "suscriptor",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "description": "Ejemplo de como se veria la descripcion"
   },
   {
     "id": 15,
@@ -197,7 +202,8 @@
     "category": "Detrás Del Rebaño",
     "type": "suscriptor",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "partido": true
   },
   {
     "id": 26,

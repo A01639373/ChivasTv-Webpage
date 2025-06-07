@@ -138,7 +138,7 @@ const Header = ({ showSearch, setShowSearch }) => {
                   <Link to="/login" className="menu-links" onClick={() => setShowRightMenu(false)}>
                   <img src={signIn} className="icon-menu" alt="Sign In" />
                   <p>Ingresa</p>
-                  <span>→</span>
+                  <span>▶</span>
                   </Link>
                 </div>
             )}
@@ -149,7 +149,7 @@ const Header = ({ showSearch, setShowSearch }) => {
                 <Link to="/profile" className="menu-links" onClick={() => setShowRightMenu(false)}>
                 <img src={perfil} className="icon-menu" alt="Profile" />
                 <p>Mi Perfil</p>
-                <span>→</span>
+                <span>▶</span>
                 </Link>
               </div>
                   
@@ -157,7 +157,7 @@ const Header = ({ showSearch, setShowSearch }) => {
                 <button className="menu-links" onClick={handleLogout} style={{background: 'none', border: 'none', width: '100%', textAlign: 'left'}}>
                 <img src={signOut} className="icon-menu" alt="Logout" />
                 <p>Cerrar Sesión</p>
-                <span>→</span>
+                <span>▶</span>
                 </button>
               </div>
               </>

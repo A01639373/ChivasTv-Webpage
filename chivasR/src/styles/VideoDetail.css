@@ -1,0 +1,183 @@
+/* === CONTENEDOR PRINCIPAL === */
+body {
+  font-family: 'AntartidaRounded-Bold', 'Inter', sans-serif;
+  background-color: #000; /* Por si no hay fondo */
+}
+
+.video-detail {
+  max-width: 1500px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #002654; /* Azul Chivas */
+  color: white;
+  font-family: 'AntartidaRounded-Bold', sans-serif;
+  border-radius: 10px;
+}
+
+/* === VIDEO PLAYER === */
+.video-player {
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-player video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === ENCABEZADO (TÍTULO + BOTÓN) === */
+.video-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.video-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* === METADATOS (SUBTÍTULO + FECHA) === */
+.video-meta h3 {
+  font-weight: 400;
+  margin: 0.2rem 0 1rem;
+  color: #cccccc;
+}
+
+.video-meta .info-line {
+  font-size: 0.95rem;
+  margin: 0.2rem 0 0.5rem 0;
+  color: #b3b3b3;
+}
+
+
+/* === BOTÓN ESTADÍSTICAS ESPECIAL === */
+.video-stats-pill {
+  background: #e53935;
+  color: #ffffff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+
+.video-stats-pill:hover {
+  opacity: 0.85;
+}
+
+.video-stats-pill .icon {
+  font-size: 1.2rem;
+}
+
+/* === DESCRIPCIÓN DEL VIDEO === */
+.video-description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #adadad;
+}
+
+/* === BOTONES ADICIONALES (SI SE USAN) === */
+.video-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.video-actions button {
+  background: #e53935; 
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  font-size: 0.95rem;
+}
+
+.video-actions button:hover {
+  background: #a01343;
+}
+
+/* === SECCIÓN DE COMENTARIOS === */
+.comments-section {
+  background: #011c3a;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+
+.comment {
+  border-top: 1px solid #444;
+  padding: 0.8rem 0;
+}
+
+.comment:first-child {
+  border-top: none;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.comment-text {
+  margin-top: 0.3rem;
+  color: #dddddd;
+}
+
+.comments-toggle button {
+  background: #ffffff;
+  color: #002654;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.comments-toggle button:hover {
+  background: #ffcc00;
+}
+
+.comments-title {
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  padding: 1rem 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  color: #b6b6b6;
+  margin-top: 2rem;
+}
+
+
+.comments-title:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.recommendations-section h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  font-weight: 700;
+  color: #f2c94c;
+}
