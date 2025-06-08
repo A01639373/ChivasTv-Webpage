@@ -12,7 +12,7 @@ function MainImage() {
   
   const slides = [
     {
-      title: "Chivas vs Cruz Azul",
+      title: "CHIVAS VS CRUZ AZUL",
       subtitle: "Revive los mejores momentos del clásico",
       img: slide1,
       button: "Ver ahora",
@@ -26,7 +26,7 @@ function MainImage() {
       position: 'center 20%'
     },
     {
-      title: "Chivas Femenil",
+      title: "EQUIPO CHIVAS FEMENIL",
       subtitle: "Lo mejor de la liga femenil en exclusiva",
       img: slide3,
       button: "Explorar",
