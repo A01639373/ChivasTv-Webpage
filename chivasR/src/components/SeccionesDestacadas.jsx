@@ -18,8 +18,8 @@ const SeccionesDestacadas = ({ filter }) => {
     <div className="secciones-destacadas">
       {categoryGroups.map((group, groupIndex) => (
         <div key={groupIndex}>
-          {/* 🔷 5 secciones verticales (tarjetas tipo DAZN) */}
-          <div className="secciones-grid">
+          {/* 🔷 Secciones tipo DAZN */}
+          <div className={`secciones-grid ${group.slice(0, 4).length <= 4 ? 'compact-grid' : ''}`}>
             {group.slice(0, 4).map((cat, i) => (
               <Link
                 key={i}
@@ -31,7 +31,7 @@ const SeccionesDestacadas = ({ filter }) => {
             ))}
           </div>
 
-          {/* 🔻 Grid de hasta 8 videos filtrados */}
+          {/* 🔻 Videos filtrados */}
           {group.flatMap(cat =>
             videos.filter(v => v.category === cat && (filter === "todos" || v.type === filter)).slice(0, 4)
           ).slice(0, 8).length > 0 && (

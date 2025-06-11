@@ -32,11 +32,6 @@ const LoginForm = () => {
 
   return (
     <div className="auth-page login-bg">
-      <div className="auth-header">
-        <Link to="/" className="back-arrow">
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </Link>
-      </div>
       <div className="auth-form-container">
         <h2>Iniciar Sesión</h2>
         <form className="auth-form" onSubmit={handleSubmit}>

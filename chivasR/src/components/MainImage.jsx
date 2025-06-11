@@ -1,76 +1,96 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/MainImage.css';
 
-const featuredItems = [
-  {
-    title: "Chivas vs Cruz Azul",
-    subtitle: "Revive los mejores momentos del clásico",
-    img: "/images/chivas-cruzazul.jpg",
-    button: "Ver ahora",
-    position: 'center 40%'
-  },
-  {
-    title: "RAICES",
-    subtitle: "Loremp Impsum Lorem Impsum",
-    img: "/images/rally.jpg",
-    button: "Más contenido",
-    position: 'center 20%'
-  },
-  {
-    title: "Chivas Femenil",
-    subtitle: "Lo mejor de la liga femenil en exclusiva",
-    img: "/images/femenil.jpg",
-    button: "Explorar",
-    position: 'center 30%'
-  }
-];
+import slide1 from '../assets/Chivas_Partido.png'
+import slide2 from "../assets/Chivas_raices.png"
+import slide3 from "../assets/Chivas_fem.png"
+import leftArrow from '../assets/leftArrow.png'
+import rightArrow from '../assets/rightArrow.png'
 
-const MainImage = ({ showSearch }) => {
-  const [current, setCurrent] = useState(0);
+function MainImage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const slides = [
+    {
+      title: "CHIVAS VS CRUZ AZUL",
+      subtitle: "Revive los mejores momentos del clásico",
+      img: slide1,
+      button: "Ver ahora",
+      position: 'center 40%'
+    },
+    {
+      title: "RAICES",
+      subtitle: "Conoce la travesía detras de los jugadores y cuerpo tecnico de Chivas",
+      img: slide2,
+      button: "Explorar",
+      position: 'center 20%'
+    },
+    {
+      title: "EQUIPO CHIVAS FEMENIL",
+      subtitle: "Lo mejor de la liga femenil en exclusiva",
+      img: slide3,
+      button: "Explorar",
+      position: 'center 30%'
+    }
+  ];
+
+  // Auto-slide cada 5 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
   const nextSlide = () => {
-    setCurrent((current + 1) % featuredItems.length);
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
   const prevSlide = () => {
-    setCurrent((current - 1 + featuredItems.length) % featuredItems.length);
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [current]);
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
 
-  const item = featuredItems[current];
+  const currentItem = slides[currentSlide];
 
   return (
     <section
-      className={`main-image ${showSearch ? 'with-search' : ''}`}
+      className="gallery"
       style={{
-        backgroundImage: `url(${item.img})`,
-        backgroundPosition: item.position || 'center center'
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${currentItem.img})`,
+        backgroundPosition: currentItem.position || 'center center'
       }}
     >
       <div className="overlay">
-        <h1>{item.title}</h1>
-        <p>{item.subtitle}</p>
-        <button>{item.button}</button>
+        <h1>{currentItem.title}</h1>
+        <p>{currentItem.subtitle}</p>
+        <button className="cta-button">{currentItem.button}</button>
       </div>
 
       <div className="controls">
-        <span className="arrow left" onClick={prevSlide}>←</span>
-        <span className="arrow right" onClick={nextSlide}>→</span>
+        <span className="arrow left" onClick={prevSlide}>
+          <img src={leftArrow} className='arrowImg'></img>
+        </span>
+        <span className="arrow right" onClick={nextSlide}>
+          <img src={rightArrow} className='arrowImg'></img>
+        </span>
       </div>
 
       <div className="dots">
-        {featuredItems.map((_, i) => (
-          <span key={i} className={`dot ${i === current ? 'active' : ''}`}></span>
+        {slides.map((_, i) => (
+          <span 
+            key={i} 
+            className={`dot ${i === currentSlide ? 'active' : ''}`}
+            onClick={() => goToSlide(i)}
+          />
         ))}
       </div>
     </section>
   );
-};
+}
 
 export default MainImage;

@@ -3,13 +3,13 @@
     "id": 1,
     "title": "Clásico De México Video 1",
     "category": "Clásico De México",
-    "type": "gratis",
+    "type": "suscriptor",
     "date": "10/10/2010",
     "duration": "10:03",
     "image": "",
     "description": "Ejemplo de como se veria la descripcion",
-    "partido": true,
-    "category_1": "De Estreno"
+    "partido": true
+
   },
   {
     "id": 2,
@@ -162,10 +162,7 @@
     "type": "gratis",
     "duration": "15:08",
     "image": "",
-    "description": "Ejemplo de como se veria la descripcion",
-    "date": "14/06/2011",
-    "partido": false,
-    "category_1": "Popular"
+    "description": "Ejemplo de como se veria la descripcion"
   },
   {
     "id": 15,
@@ -294,10 +291,7 @@
     "type": "gratis",
     "duration": "10:03",
     "image": "",
-    "partido": true,
-    "date": "06/06/2015",
-    "description": "Un vistazo detrás de cámaras",
-    "category_1": "Archivo"
+    "partido": true
   },
   {
     "id": 26,

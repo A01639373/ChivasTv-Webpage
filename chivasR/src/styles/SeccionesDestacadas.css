@@ -1,11 +1,12 @@
 .secciones-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ✅ Fuerza 4 columnas */
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 24px;
+  justify-content: center;
   margin: 40px auto;
   max-width: 1000px;
 }
+
 
 .seccion-card {
   width: 200px;                  /* ✅ tamaño fijo */
@@ -33,4 +34,3 @@
   font-size: 16px;
   line-height: 1.3;
 }
-

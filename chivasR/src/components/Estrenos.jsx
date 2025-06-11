@@ -19,14 +19,14 @@ const Estrenos = ({ videos }) => {
         <div key={groupIndex}>
           {/* Grid de 5 secciones estilo DAZN */}
           <div className="secciones-grid">
-            {group.map((cat, i) => (
-              <Link
-                key={i}
-                to={`/${cat.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '')}`}
-                className="seccion-card"
-              >
-                <div className="seccion-thumb">{cat}</div>
-              </Link>
+            {group.slice(0, 4).map((cat, i) => (
+            <Link
+              key={i}
+              to={`/${cat.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '')}`}
+              className="seccion-card"
+            >
+              <div className="seccion-thumb">{cat}</div>
+            </Link>
             ))}
           </div>
 
