@@ -83,7 +83,6 @@ const Header = ({ showSearch, setShowSearch }) => {
         {homeLinks.map((link, index) => (
           <span key={index} className="nav-item">{link}</span>
         ))}
-
         <div className="nav-item dropdown" onClick={() => setShowSections(!showSections)}>
           Secciones ▾
           {showSections && (
@@ -112,7 +111,17 @@ const Header = ({ showSearch, setShowSearch }) => {
 
       <div className="header-right">
         {isLoggedIn && user && (
-          <span className="user-greeting">Hola, {user.split('@')[0]}</span>
+          <div className="account-dropdown">
+            <span
+              className="btn-account"
+              onClick={() => setShowSections(false)}
+            >
+              Hola, {user.split('@')[0]} ▾
+            </span>
+            <div className="account-menu">
+              <Link to="/cuenta" className="dropdown-item">Mi cuenta</Link>
+            </div>
+          </div>
         )}
 
         {!isLoggedIn && (

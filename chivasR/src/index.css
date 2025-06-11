@@ -24,6 +24,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   display: block;
+  background-color: #002654;
 }
 
 /* Enlaces */
@@ -74,4 +75,12 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: auto;
+  background-color: #0c2869;
 }
