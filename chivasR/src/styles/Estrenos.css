@@ -6,10 +6,13 @@
 
 .secciones-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Fijo a 5 columnas */
-  gap: 24px;
-  margin-bottom: 50px;
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 1100px;
 }
+
 
 .seccion-card {
   text-decoration: none;

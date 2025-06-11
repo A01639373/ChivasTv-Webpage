@@ -7,12 +7,16 @@
   justify-content: space-between;
   padding: 10px 20px;
   box-sizing: border-box;
-  position: absolute;
+
+  /* 🔁 Cambiado de absolute a fixed */
+  position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
+
   z-index: 999;
   font-family: 'AntartidaRounded-Bold', sans-serif;
 }
-
 .header-left .logo {
   font-size: 28px;
   font-weight: bold;
@@ -43,6 +47,19 @@
   color: white;
   font-weight: bold;
 }
+
+.nav-item.active {
+  color: rgb(0, 0, 0);          /* o black si prefieres */
+  font-weight: bold;
+  border-bottom: 2px solid white; /* opcional */
+}
+
+.nav-item:hover {
+  color: #FFD700; /* dorado/mostaza */
+  transition: color 0.2s ease;
+}
+
+
 
 /*Secciones*/
 .dropdown {
@@ -77,7 +94,7 @@
 }
 
 .dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(1, 0, 0, 0.1);
   padding-left: 5px;
   border-radius: 3px;
 }

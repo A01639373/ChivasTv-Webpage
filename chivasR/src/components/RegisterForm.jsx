@@ -124,11 +124,6 @@ const RegisterForm = () => {
 
   return(
     <div className='auth-page login-bg'>
-      <div className="auth-header">
-        <Link to="/" className="back-arrow">
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </Link>
-      </div>
       <div className='auth-form-container'>
         <h1>Crear cuenta</h1>
         <form className="auth-form" onSubmit={handleSubmit}>

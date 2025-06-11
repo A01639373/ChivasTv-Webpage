@@ -25,6 +25,7 @@ body {
   min-height: 100vh;
   display: block;
   background-color: #002654;
+  padding-top: 70px;
 }
 
 /* Enlaces */

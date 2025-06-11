@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import '../styles/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { useLocation } from 'react-router-dom';
 import signIn from '../assets/signIn.png';
 import signOut from '../assets/signOut.png';
 import perfil from '../assets/profile.png';
@@ -35,26 +34,16 @@ const Header = ({ showSearch, setShowSearch }) => {
     setShowRightMenu(!showRightMenu);
   };
 
-  // Cerrar menús al hacer click fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (!event.target.closest('.header-right')) {
-        setShowRightMenu(false);
-      }
-      if (!event.target.closest('.dropdown')) {
-        setShowSections(false);
-      }
+      if (!event.target.closest('.header-right')) setShowRightMenu(false);
+      if (!event.target.closest('.dropdown')) setShowSections(false);
     };
-
     document.addEventListener('click', handleClickOutside);
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
-
-  const homeLinks = [
-    "De Estreno"
-  ];
 
   const sectionLinks = [
     "Clásico De México", "Santuario Rojiblanco", "Raíces",
@@ -75,53 +64,59 @@ const Header = ({ showSearch, setShowSearch }) => {
   return (
     <header className="header">
       <div className="header-left">
-        <a className="logo" href="/">CHIVASTV</a>
+        <NavLink to="/" className="logo">CHIVASTV</NavLink>
       </div>
 
       <nav className="nav-menu">
-        <Link to="/" className="nav-item">Inicio</Link>
-        {homeLinks.map((link, index) => (
-          <span key={index} className="nav-item">{link}</span>
-        ))}
+        <NavLink
+          to="/"
+          className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+        >
+          Inicio
+        </NavLink>
+
+        <NavLink
+          to="/de-estreno"
+          className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+        >
+          De Estreno
+        </NavLink>
+
         <div className="nav-item dropdown" onClick={() => setShowSections(!showSections)}>
           Secciones ▾
           {showSections && (
             <div className="dropdown-menu">
               {sectionLinks.map((section, idx) => (
-                <Link
+                <NavLink
                   key={idx}
                   to={formatRoute(section)}
                   className="dropdown-item"
                   onClick={() => setShowSections(false)}
                 >
                   {section}
-                </Link>
+                </NavLink>
               ))}
             </div>
           )}
         </div>
 
-        <span className="nav-item live" Link to='#'>Live TV</span>
-        
+        <NavLink
+          to="/liveTV"
+          className={({ isActive }) => `nav-item live ${isActive ? 'active' : ''}`}
+        >
+          Live TV
+        </NavLink>
+
         <span className="icon" onClick={() => setShowSearch(!showSearch)}>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </span>
-
       </nav>
 
       <div className="header-right">
         {isLoggedIn && user && (
-          <div className="account-dropdown">
-            <span
-              className="btn-account"
-              onClick={() => setShowSections(false)}
-            >
-              Hola, {user.split('@')[0]} ▾
-            </span>
-            <div className="account-menu">
-              <Link to="/cuenta" className="dropdown-item">Mi cuenta</Link>
-            </div>
-          </div>
+          <span className="btn-account">
+            Hola, {user.split('@')[0]}
+          </span>
         )}
 
         {!isLoggedIn && (
@@ -141,37 +136,33 @@ const Header = ({ showSearch, setShowSearch }) => {
 
           <div className={`right-menu-wrap ${showRightMenu ? 'open-menu' : ''}`} id="rightMenu">
             <div className="right-menu">
-
-            {!isLoggedIn && (
+              {!isLoggedIn && (
                 <div className="menu-info">
                   <Link to="/login" className="menu-links" onClick={() => setShowRightMenu(false)}>
-                  <img src={signIn} className="icon-menu" alt="Sign In" />
-                  <p>Ingresa</p>
-                  <span>▶</span>
+                    <img src={signIn} className="icon-menu" alt="Sign In" />
+                    <p>Ingresa</p>
+                    <span>▶</span>
                   </Link>
                 </div>
-            )}
-            
-            {isLoggedIn && (
-              <>
-              <div className="menu-info">
-                <Link to="/profile" className="menu-links" onClick={() => setShowRightMenu(false)}>
-                <img src={perfil} className="icon-menu" alt="Profile" />
-                <p>Mi Perfil</p>
-                <span>▶</span>
-                </Link>
-              </div>
-                  
-              <div className="menu-info">
-                <button className="menu-links" onClick={handleLogout} style={{background: 'none', border: 'none', width: '100%', textAlign: 'left'}}>
-                <img src={signOut} className="icon-menu" alt="Logout" />
-                <p>Cerrar Sesión</p>
-                <span>▶</span>
-                </button>
-              </div>
-              </>
-            )}
-
+              )}
+              {isLoggedIn && (
+                <>
+                  <div className="menu-info">
+                    <Link to="/cuenta" className="menu-links" onClick={() => setShowRightMenu(false)}>
+                      <img src={perfil} className="icon-menu" alt="Profile" />
+                      <p>Mi Cuenta</p>
+                      <span>▶</span>
+                    </Link>
+                  </div>
+                  <div className="menu-info">
+                    <button className="menu-links" onClick={handleLogout} style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left' }}>
+                      <img src={signOut} className="icon-menu" alt="Logout" />
+                      <p>Cerrar Sesión</p>
+                      <span>▶</span>
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
