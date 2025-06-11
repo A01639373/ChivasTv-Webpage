@@ -3,13 +3,13 @@
     "id": 1,
     "title": "Clásico De México Video 1",
     "category": "Clásico De México",
-    "type": "suscriptor",
+    "type": "gratis",
     "date": "10/10/2010",
     "duration": "10:03",
     "image": "",
     "description": "Ejemplo de como se veria la descripcion",
-    "partido": true
-
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 2,
@@ -17,15 +17,23 @@
     "category": "Clásico De México",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "08/06/2019",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 3,
     "title": "Clásico De México Video 3",
     "category": "Clásico De México",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "25/07/2017",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 4,
@@ -33,23 +41,35 @@
     "category": "Clásico De México",
     "type": "suscriptor",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "12/01/2015",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 5,
     "title": "Clásico De México Video 5",
     "category": "Clásico De México",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "07/02/2011",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 6,
     "title": "Clásico De México Video 6",
     "category": "Clásico De México",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "28/01/2021",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 7,
@@ -57,7 +77,11 @@
     "category": "Clásico De México",
     "type": "suscriptor",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "21/05/2012",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 8,
@@ -65,31 +89,47 @@
     "category": "Clásico De México",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "03/07/2024",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 9,
     "title": "Santuario Rojiblanco Video 1",
     "category": "Santuario Rojiblanco",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "07/02/2015",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 10,
     "title": "Santuario Rojiblanco Video 2",
     "category": "Santuario Rojiblanco",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "26/02/2019",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 11,
     "title": "Santuario Rojiblanco Video 3",
     "category": "Santuario Rojiblanco",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "19/03/2018",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 12,
@@ -97,7 +137,11 @@
     "category": "Santuario Rojiblanco",
     "type": "suscriptor",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "12/06/2020",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 13,
@@ -105,24 +149,35 @@
     "category": "Santuario Rojiblanco",
     "type": "suscriptor",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "01/09/2017",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 14,
     "title": "Santuario Rojiblanco Video 6",
     "category": "Santuario Rojiblanco",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
     "image": "",
-    "description": "Ejemplo de como se veria la descripcion"
+    "description": "Ejemplo de como se veria la descripcion",
+    "date": "14/06/2011",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 15,
     "title": "Santuario Rojiblanco Video 7",
     "category": "Santuario Rojiblanco",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "14/05/2015",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 16,
@@ -130,15 +185,23 @@
     "category": "Santuario Rojiblanco",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "05/07/2023",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 17,
     "title": "Raíces Video 1",
     "category": "Raíces",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "25/05/2020",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 18,
@@ -146,7 +209,11 @@
     "category": "Raíces",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "18/05/2024",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 19,
@@ -154,7 +221,11 @@
     "category": "Raíces",
     "type": "suscriptor",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "08/05/2022",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 20,
@@ -162,23 +233,35 @@
     "category": "Raíces",
     "type": "suscriptor",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "12/05/2017",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 21,
     "title": "Raíces Video 5",
     "category": "Raíces",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "14/03/2012",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 22,
     "title": "Raíces Video 6",
     "category": "Raíces",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "21/03/2017",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 23,
@@ -186,40 +269,59 @@
     "category": "Raíces",
     "type": "suscriptor",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "08/01/2013",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 24,
     "title": "Raíces Video 8",
     "category": "Raíces",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "01/01/2013",
+    "description": "Revive los mejores momentos",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 25,
     "title": "Detrás Del Rebaño Video 1",
     "category": "Detrás Del Rebaño",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "10:03",
     "image": "",
-    "partido": true
+    "partido": true,
+    "date": "06/06/2015",
+    "description": "Un vistazo detrás de cámaras",
+    "category_1": "Archivo"
   },
   {
     "id": 26,
     "title": "Detrás Del Rebaño Video 2",
     "category": "Detrás Del Rebaño",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "27/01/2019",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 27,
     "title": "Detrás Del Rebaño Video 3",
     "category": "Detrás Del Rebaño",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "03/01/2020",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 28,
@@ -227,7 +329,11 @@
     "category": "Detrás Del Rebaño",
     "type": "suscriptor",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "11/05/2023",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 29,
@@ -235,7 +341,11 @@
     "category": "Detrás Del Rebaño",
     "type": "suscriptor",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "14/08/2016",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 30,
@@ -243,15 +353,23 @@
     "category": "Detrás Del Rebaño",
     "type": "suscriptor",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "24/01/2014",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 31,
     "title": "Detrás Del Rebaño Video 7",
     "category": "Detrás Del Rebaño",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "25/01/2014",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 32,
@@ -259,7 +377,11 @@
     "category": "Detrás Del Rebaño",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "19/09/2024",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 33,
@@ -267,7 +389,11 @@
     "category": "Resumen",
     "type": "suscriptor",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "02/07/2020",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 34,
@@ -275,15 +401,23 @@
     "category": "Resumen",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "27/07/2016",
+    "description": "Revive los mejores momentos",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 35,
     "title": "Resumen Video 3",
     "category": "Resumen",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "06/03/2018",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 36,
@@ -291,47 +425,71 @@
     "category": "Resumen",
     "type": "suscriptor",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "10/08/2022",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 37,
     "title": "Resumen Video 5",
     "category": "Resumen",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "26/03/2010",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 38,
     "title": "Resumen Video 6",
     "category": "Resumen",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "07/02/2016",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 39,
     "title": "Resumen Video 7",
     "category": "Resumen",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "02/08/2018",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 40,
     "title": "Resumen Video 8",
     "category": "Resumen",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "04/04/2023",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 41,
     "title": "Repeticiones Video 1",
     "category": "Repeticiones",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "16/02/2012",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 42,
@@ -339,7 +497,11 @@
     "category": "Repeticiones",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "27/08/2015",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 43,
@@ -347,7 +509,11 @@
     "category": "Repeticiones",
     "type": "suscriptor",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "08/04/2022",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 44,
@@ -355,15 +521,23 @@
     "category": "Repeticiones",
     "type": "suscriptor",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "23/09/2013",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 45,
     "title": "Repeticiones Video 5",
     "category": "Repeticiones",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "13/03/2016",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 46,
@@ -371,23 +545,35 @@
     "category": "Repeticiones",
     "type": "suscriptor",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "05/06/2023",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 47,
     "title": "Repeticiones Video 7",
     "category": "Repeticiones",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "02/07/2022",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 48,
     "title": "Repeticiones Video 8",
     "category": "Repeticiones",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "12/08/2024",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 49,
@@ -395,15 +581,23 @@
     "category": "Resiliencia",
     "type": "suscriptor",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "18/08/2012",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 50,
     "title": "Resiliencia Video 2",
     "category": "Resiliencia",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "16/04/2024",
+    "description": "Revive los mejores momentos",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 51,
@@ -411,55 +605,83 @@
     "category": "Resiliencia",
     "type": "suscriptor",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "14/04/2021",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 52,
     "title": "Resiliencia Video 4",
     "category": "Resiliencia",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "04/09/2016",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 53,
     "title": "Resiliencia Video 5",
     "category": "Resiliencia",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "14/08/2012",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 54,
     "title": "Resiliencia Video 6",
     "category": "Resiliencia",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "24/08/2024",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 55,
     "title": "Resiliencia Video 7",
     "category": "Resiliencia",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "07/07/2015",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 56,
     "title": "Resiliencia Video 8",
     "category": "Resiliencia",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "15/06/2016",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 57,
     "title": "Chivas Femenil Video 1",
     "category": "Chivas Femenil",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "23/08/2020",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 58,
@@ -467,15 +689,23 @@
     "category": "Chivas Femenil",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "16/07/2010",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 59,
     "title": "Chivas Femenil Video 3",
     "category": "Chivas Femenil",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "10/02/2022",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 60,
@@ -483,15 +713,23 @@
     "category": "Chivas Femenil",
     "type": "suscriptor",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "23/08/2013",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 61,
     "title": "Chivas Femenil Video 5",
     "category": "Chivas Femenil",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "02/02/2024",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 62,
@@ -499,7 +737,11 @@
     "category": "Chivas Femenil",
     "type": "suscriptor",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "04/05/2012",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 63,
@@ -507,7 +749,11 @@
     "category": "Chivas Femenil",
     "type": "suscriptor",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "23/08/2014",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 64,
@@ -515,7 +761,11 @@
     "category": "Chivas Femenil",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "19/07/2023",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 65,
@@ -523,7 +773,11 @@
     "category": "Chivas Varonil",
     "type": "suscriptor",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "09/01/2012",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 66,
@@ -531,7 +785,11 @@
     "category": "Chivas Varonil",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "16/01/2016",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 67,
@@ -539,23 +797,35 @@
     "category": "Chivas Varonil",
     "type": "suscriptor",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "22/09/2016",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 68,
     "title": "Chivas Varonil Video 4",
     "category": "Chivas Varonil",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "11/01/2024",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 69,
     "title": "Chivas Varonil Video 5",
     "category": "Chivas Varonil",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "16/02/2019",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 70,
@@ -563,7 +833,11 @@
     "category": "Chivas Varonil",
     "type": "suscriptor",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "11/09/2017",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 71,
@@ -571,7 +845,11 @@
     "category": "Chivas Varonil",
     "type": "suscriptor",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "23/09/2013",
+    "description": "Revive los mejores momentos",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 72,
@@ -579,7 +857,11 @@
     "category": "Chivas Varonil",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "28/01/2022",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 73,
@@ -587,15 +869,23 @@
     "category": "Sub's",
     "type": "suscriptor",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "12/04/2023",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 74,
     "title": "Sub's Video 2",
     "category": "Sub's",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "28/05/2021",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 75,
@@ -603,23 +893,35 @@
     "category": "Sub's",
     "type": "suscriptor",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "20/08/2020",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 76,
     "title": "Sub's Video 4",
     "category": "Sub's",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "24/07/2023",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 77,
     "title": "Sub's Video 5",
     "category": "Sub's",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "26/04/2020",
+    "description": "Revive los mejores momentos",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 78,
@@ -627,7 +929,11 @@
     "category": "Sub's",
     "type": "suscriptor",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "23/01/2016",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 79,
@@ -635,7 +941,11 @@
     "category": "Sub's",
     "type": "suscriptor",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "03/04/2020",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 80,
@@ -643,7 +953,11 @@
     "category": "Sub's",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "09/04/2024",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 81,
@@ -651,15 +965,23 @@
     "category": "Entrevistas",
     "type": "suscriptor",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "19/07/2018",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 82,
     "title": "Entrevistas Video 2",
     "category": "Entrevistas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "07/04/2017",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 83,
@@ -667,7 +989,11 @@
     "category": "Entrevistas",
     "type": "suscriptor",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "12/06/2014",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 84,
@@ -675,7 +1001,11 @@
     "category": "Entrevistas",
     "type": "suscriptor",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "20/01/2022",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 85,
@@ -683,7 +1013,11 @@
     "category": "Entrevistas",
     "type": "suscriptor",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "09/02/2022",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 86,
@@ -691,15 +1025,23 @@
     "category": "Entrevistas",
     "type": "suscriptor",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "05/05/2022",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 87,
     "title": "Entrevistas Video 7",
     "category": "Entrevistas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "20/09/2024",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 88,
@@ -707,15 +1049,23 @@
     "category": "Entrevistas",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "14/02/2013",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 89,
     "title": "Día A Día Rojiblanco Video 1",
     "category": "Día A Día Rojiblanco",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "02/01/2019",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 90,
@@ -723,39 +1073,59 @@
     "category": "Día A Día Rojiblanco",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "20/01/2013",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 91,
     "title": "Día A Día Rojiblanco Video 3",
     "category": "Día A Día Rojiblanco",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "23/07/2013",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 92,
     "title": "Día A Día Rojiblanco Video 4",
     "category": "Día A Día Rojiblanco",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "07/08/2016",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 93,
     "title": "Día A Día Rojiblanco Video 5",
     "category": "Día A Día Rojiblanco",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "15/08/2012",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 94,
     "title": "Día A Día Rojiblanco Video 6",
     "category": "Día A Día Rojiblanco",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "25/09/2014",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 95,
@@ -763,7 +1133,11 @@
     "category": "Día A Día Rojiblanco",
     "type": "suscriptor",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "18/02/2011",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 96,
@@ -771,15 +1145,23 @@
     "category": "Día A Día Rojiblanco",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "25/04/2016",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 97,
     "title": "Highlights On Field Video 1",
     "category": "Highlights On Field",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "16/02/2011",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 98,
@@ -787,7 +1169,11 @@
     "category": "Highlights On Field",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "13/09/2015",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 99,
@@ -795,15 +1181,23 @@
     "category": "Highlights On Field",
     "type": "suscriptor",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "20/07/2023",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 100,
     "title": "Highlights On Field Video 4",
     "category": "Highlights On Field",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "23/06/2022",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 101,
@@ -811,23 +1205,35 @@
     "category": "Highlights On Field",
     "type": "suscriptor",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "24/06/2021",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 102,
     "title": "Highlights On Field Video 6",
     "category": "Highlights On Field",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "20/01/2013",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 103,
     "title": "Highlights On Field Video 7",
     "category": "Highlights On Field",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "12/09/2010",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 104,
@@ -835,15 +1241,23 @@
     "category": "Highlights On Field",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "02/02/2015",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 105,
     "title": "Leyendas Video 1",
     "category": "Leyendas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "05/09/2021",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 106,
@@ -851,23 +1265,35 @@
     "category": "Leyendas",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "27/09/2011",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 107,
     "title": "Leyendas Video 3",
     "category": "Leyendas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "17/04/2020",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 108,
     "title": "Leyendas Video 4",
     "category": "Leyendas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "01/07/2022",
+    "description": "Revive los mejores momentos",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 109,
@@ -875,31 +1301,47 @@
     "category": "Leyendas",
     "type": "suscriptor",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "04/09/2017",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 110,
     "title": "Leyendas Video 6",
     "category": "Leyendas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "02/02/2022",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 111,
     "title": "Leyendas Video 7",
     "category": "Leyendas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "20/05/2017",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 112,
     "title": "Leyendas Video 8",
     "category": "Leyendas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "08/09/2019",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 113,
@@ -907,15 +1349,23 @@
     "category": "Historia Sagrada",
     "type": "suscriptor",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "04/09/2010",
+    "description": "Revive los mejores momentos",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 114,
     "title": "Historia Sagrada Video 2",
     "category": "Historia Sagrada",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "17/04/2012",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 115,
@@ -923,7 +1373,11 @@
     "category": "Historia Sagrada",
     "type": "suscriptor",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "11/04/2017",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 116,
@@ -931,7 +1385,11 @@
     "category": "Historia Sagrada",
     "type": "suscriptor",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "07/02/2014",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 117,
@@ -939,23 +1397,35 @@
     "category": "Historia Sagrada",
     "type": "suscriptor",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "01/07/2020",
+    "description": "Revive los mejores momentos",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 118,
     "title": "Historia Sagrada Video 6",
     "category": "Historia Sagrada",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "06/08/2017",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 119,
     "title": "Historia Sagrada Video 7",
     "category": "Historia Sagrada",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "14/08/2018",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 120,
@@ -963,7 +1433,11 @@
     "category": "Historia Sagrada",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "25/01/2021",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 121,
@@ -971,7 +1445,11 @@
     "category": "Nación Chivas",
     "type": "suscriptor",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "14/06/2012",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 122,
@@ -979,7 +1457,11 @@
     "category": "Nación Chivas",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "01/05/2022",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 123,
@@ -987,23 +1469,35 @@
     "category": "Nación Chivas",
     "type": "suscriptor",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "13/07/2024",
+    "description": "Revive los mejores momentos",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 124,
     "title": "Nación Chivas Video 4",
     "category": "Nación Chivas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "03/02/2023",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 125,
     "title": "Nación Chivas Video 5",
     "category": "Nación Chivas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "04/05/2018",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 126,
@@ -1011,7 +1505,11 @@
     "category": "Nación Chivas",
     "type": "suscriptor",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "05/08/2014",
+    "description": "Revive los mejores momentos",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 127,
@@ -1019,7 +1517,11 @@
     "category": "Nación Chivas",
     "type": "suscriptor",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "26/03/2022",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 128,
@@ -1027,7 +1529,11 @@
     "category": "Nación Chivas",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "22/04/2012",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 129,
@@ -1035,39 +1541,59 @@
     "category": "Operación Valorant",
     "type": "suscriptor",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "23/08/2012",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 130,
     "title": "Operación Valorant Video 2",
     "category": "Operación Valorant",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "02/01/2016",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 131,
     "title": "Operación Valorant Video 3",
     "category": "Operación Valorant",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "26/08/2013",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 132,
     "title": "Operación Valorant Video 4",
     "category": "Operación Valorant",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "01/05/2017",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 133,
     "title": "Operación Valorant Video 5",
     "category": "Operación Valorant",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "22/09/2016",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 134,
@@ -1075,15 +1601,23 @@
     "category": "Operación Valorant",
     "type": "suscriptor",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "04/07/2022",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 135,
     "title": "Operación Valorant Video 7",
     "category": "Operación Valorant",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "08/08/2020",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 136,
@@ -1091,39 +1625,59 @@
     "category": "Operación Valorant",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "21/07/2023",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 137,
     "title": "Esports Video 1",
     "category": "Esports",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "24/04/2017",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 138,
     "title": "Esports Video 2",
     "category": "Esports",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "19/03/2020",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 139,
     "title": "Esports Video 3",
     "category": "Esports",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "14/09/2011",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 140,
     "title": "Esports Video 4",
     "category": "Esports",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "03/05/2015",
+    "description": "Historias que inspiran",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 141,
@@ -1131,31 +1685,47 @@
     "category": "Esports",
     "type": "suscriptor",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "19/01/2012",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 142,
     "title": "Esports Video 6",
     "category": "Esports",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "26/09/2022",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 143,
     "title": "Esports Video 7",
     "category": "Esports",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "01/08/2013",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Recomendado"
   },
   {
     "id": 144,
     "title": "Esports Video 8",
     "category": "Esports",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "15/09/2020",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 145,
@@ -1163,7 +1733,11 @@
     "category": "El Podcast De Las Chivas",
     "type": "suscriptor",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "24/01/2020",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 146,
@@ -1171,7 +1745,11 @@
     "category": "El Podcast De Las Chivas",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "11/01/2010",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 147,
@@ -1179,7 +1757,11 @@
     "category": "El Podcast De Las Chivas",
     "type": "suscriptor",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "19/02/2011",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 148,
@@ -1187,7 +1769,11 @@
     "category": "El Podcast De Las Chivas",
     "type": "suscriptor",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "08/07/2016",
+    "description": "Un vistazo detrás de cámaras",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 149,
@@ -1195,15 +1781,23 @@
     "category": "El Podcast De Las Chivas",
     "type": "suscriptor",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "07/08/2023",
+    "description": "Contenido exclusivo para fans",
+    "partido": false,
+    "category_1": "Archivo"
   },
   {
     "id": 150,
     "title": "El Podcast De Las Chivas Video 6",
     "category": "El Podcast De Las Chivas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "22/08/2010",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Recomendado"
   },
   {
     "id": 151,
@@ -1211,23 +1805,35 @@
     "category": "El Podcast De Las Chivas",
     "type": "suscriptor",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "26/03/2013",
+    "description": "Emoción pura desde el campo",
+    "partido": false,
+    "category_1": "Popular"
   },
   {
     "id": 152,
     "title": "El Podcast De Las Chivas Video 8",
     "category": "El Podcast De Las Chivas",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "08/07/2020",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 153,
     "title": "El Recuerdo Video 1",
     "category": "El Recuerdo",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "10:03",
-    "image": ""
+    "image": "",
+    "date": "26/09/2011",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "De Estreno"
   },
   {
     "id": 154,
@@ -1235,7 +1841,11 @@
     "category": "El Recuerdo",
     "type": "suscriptor",
     "duration": "11:04",
-    "image": ""
+    "image": "",
+    "date": "27/08/2011",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 155,
@@ -1243,15 +1853,23 @@
     "category": "El Recuerdo",
     "type": "suscriptor",
     "duration": "12:05",
-    "image": ""
+    "image": "",
+    "date": "10/07/2015",
+    "description": "Revive los mejores momentos",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 156,
     "title": "El Recuerdo Video 4",
     "category": "El Recuerdo",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "13:06",
-    "image": ""
+    "image": "",
+    "date": "25/01/2010",
+    "description": "Revive los mejores momentos",
+    "partido": false,
+    "category_1": "De Estreno"
   },
   {
     "id": 157,
@@ -1259,23 +1877,35 @@
     "category": "El Recuerdo",
     "type": "suscriptor",
     "duration": "14:07",
-    "image": ""
+    "image": "",
+    "date": "12/06/2014",
+    "description": "Historias que inspiran",
+    "partido": true,
+    "category_1": "Archivo"
   },
   {
     "id": 158,
     "title": "El Recuerdo Video 6",
     "category": "El Recuerdo",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "15:08",
-    "image": ""
+    "image": "",
+    "date": "17/08/2021",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 159,
     "title": "El Recuerdo Video 7",
     "category": "El Recuerdo",
-    "type": "suscriptor",
+    "type": "gratis",
     "duration": "16:03",
-    "image": ""
+    "image": "",
+    "date": "28/07/2013",
+    "description": "Contenido exclusivo para fans",
+    "partido": true,
+    "category_1": "Popular"
   },
   {
     "id": 160,
@@ -1283,6 +1913,10 @@
     "category": "El Recuerdo",
     "type": "suscriptor",
     "duration": "17:04",
-    "image": ""
+    "image": "",
+    "date": "02/01/2012",
+    "description": "Emoción pura desde el campo",
+    "partido": true,
+    "category_1": "De Estreno"
   }
 ]

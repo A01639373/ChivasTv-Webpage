@@ -1,29 +1,35 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import videoData from '../data/videos_chivastv.json';
 import '../styles/VideoDetail.css';
-import { Link } from 'react-router-dom';
 
 const VideoDetail = () => {
   const { id } = useParams();
   const video = videoData.find(v => v.id === parseInt(id));
   const [showComments, setShowComments] = useState(false);
 
-  // Simulación de recomendaciones (puedes reemplazar esto por contenido real)
-const filteredVideos = videoData.filter(v => v.id !== parseInt(id));
-const getRandomVideos = (list, count) => {
-  const shuffled = [...list].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-};
-const recommendations = getRandomVideos(filteredVideos, 8);
+  const isPremium = localStorage.getItem('premium') === 'true';
 
+  const filteredVideos = videoData.filter(v => v.id !== parseInt(id));
+  const getRandomVideos = (list, count) => {
+    const shuffled = [...list].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
+  const recommendations = getRandomVideos(filteredVideos, 8);
 
   if (!video) return <div className="video-detail">Video no encontrado</div>;
 
   return (
     <div className="video-detail">
       <div className="video-player">
-        <video controls src={`/videos/${video.id}.mp4`} />
+        {video.type === 'suscriptor' && !isPremium ? (
+          <div className="paywall">
+            <p>Este video es exclusivo para suscriptores.</p>
+            <Link to="/cuenta" className="btn-go-premium">Hazte Premium</Link>
+          </div>
+        ) : (
+          <video controls src={`/videos/${video.id}.mp4`} />
+        )}
       </div>
 
       <div className="video-header">
@@ -70,7 +76,7 @@ const recommendations = getRandomVideos(filteredVideos, 8);
           {recommendations.map((item) => (
             <Link to={`/video/${item.id}`} key={item.id} className="card">
               <div className="image-placeholder">
-                <p className="card-date">{video.duration}</p>
+                <p className="card-date">{item.duration}</p>
               </div>
               <h3 className="card-title">{item.title}</h3>
             </Link>

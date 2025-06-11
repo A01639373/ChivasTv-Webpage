@@ -171,3 +171,56 @@
 .search-full input:focus {
   border-bottom: 2px solid #0c2869;
 }
+
+.btn-account {
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.btn-account:hover {
+  color: #ffcc00; /* o el color que quieras para hover */
+}
+
+.account-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-account {
+  color: white;
+  font-weight: 500;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.account-menu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: none;
+  flex-direction: column;
+  width: 140px;
+  z-index: 1000;
+}
+
+.account-dropdown:hover .account-menu {
+  display: flex;
+}
+
+.account-menu .dropdown-item {
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+.account-menu .dropdown-item:hover {
+  background-color: #f0f0f0;
+}
