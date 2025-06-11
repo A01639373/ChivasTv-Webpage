@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Header from "./components/Header.jsx";
 import MainImage from "./components/MainImage.jsx";
 import FilterBar from "./components/FilterBar.jsx";
-import ContentGrid from "./components/ContentGrid.jsx";
+import SeccionesDestacadas from "./components/SeccionesDestacadas.jsx";
+import './styles/app.css';
 
 function App() {
   const [showSearch, setShowSearch] = useState(false);
@@ -10,10 +11,10 @@ function App() {
 
   return (
     <>
-      <div className={showSearch ? "with-search" : ""}>
+      <div className={`app-container ${showSearch ? "with-search" : ""}`}>
         <MainImage />
         <FilterBar filter={filter} setFilter={setFilter} />
-        <ContentGrid filter={filter} />
+        <SeccionesDestacadas filter={filter} />
       </div>
     </>
   );

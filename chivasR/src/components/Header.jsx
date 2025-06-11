@@ -27,7 +27,7 @@ const Header = ({ showSearch, setShowSearch }) => {
   };
 
   const homeLinks = [
-    "Destacados", "De Estreno"
+    { name: "De Estreno", path: "/de-estreno" }
   ];
 
   const sectionLinks = [
@@ -54,10 +54,11 @@ const Header = ({ showSearch, setShowSearch }) => {
 
       <nav className="nav-menu">
         <Link to="/" className="nav-item">Home</Link>
-        {homeLinks.map((link, index) => (
-          <span key={index} className="nav-item">{link}</span>
+        {homeLinks.map((link, i) => (
+          <Link key={i} to={link.path} className="nav-item">
+            {link.name}
+          </Link>
         ))}
-
         <div className="nav-item dropdown" onClick={() => setShowSections(!showSections)}>
           Secciones ▾
           {showSections && (
@@ -76,12 +77,22 @@ const Header = ({ showSearch, setShowSearch }) => {
           )}
         </div>
 
-        <span className="nav-item live">Live TV </span>
+        <Link to="/LiveTV" className="nav-item live">Live TV</Link>
       </nav>
 
       <div className="header-right">
         {isLoggedIn && user && (
-          <span className="user-greeting">Hola, {user.split('@')[0]}</span>
+          <div className="account-dropdown">
+            <span
+              className="btn-account"
+              onClick={() => setShowSections(false)}
+            >
+              Hola, {user.split('@')[0]} ▾
+            </span>
+            <div className="account-menu">
+              <Link to="/cuenta" className="dropdown-item">Mi cuenta</Link>
+            </div>
+          </div>
         )}
         <span className="icon" onClick={() => setShowSearch(!showSearch)}>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
