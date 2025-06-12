@@ -75,13 +75,6 @@ const Header = ({ showSearch, setShowSearch }) => {
           Inicio
         </NavLink>
 
-        <NavLink
-          to="/de-estreno"
-          className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
-        >
-          De Estreno
-        </NavLink>
-
         <div className="nav-item dropdown" onClick={() => setShowSections(!showSections)}>
           Secciones ▾
           {showSections && (

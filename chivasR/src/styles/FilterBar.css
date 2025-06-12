@@ -1,6 +1,6 @@
 .filter-buttons {
   position: sticky;
-  top: 80px; /* ← ajusta si tu header mide más */
+  top: 80px; 
   z-index: 999;
   background-color: #0c2869;
   padding: 20px 45px 10px;
@@ -8,7 +8,7 @@
   justify-content: flex-end;
   gap: 10px;
   flex-wrap: wrap;
-  border-bottom: 4px solid #e53935; /* ✅ línea roja destacada */
+  border-bottom: 4px solid #ff1e1a; 
 }
 
 
@@ -16,7 +16,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  background-color: red; /* Solo para visualizarlo */
+  background-color: #ff1e1a;
   padding: 20px;
 }
 
@@ -38,12 +38,12 @@
 }
 
 .filter-buttons button:hover {
-  background-color: #e53935;
+  background-color: #ff1e1a;
   color: white;
 }
 
 .filter-buttons .active {
-  background-color: #e53935;
+  background-color: #ff1e1a;
   color: white;
   box-shadow: 0 0 0 2px white;
 }

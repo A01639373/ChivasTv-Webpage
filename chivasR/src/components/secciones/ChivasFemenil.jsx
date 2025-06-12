@@ -3,21 +3,22 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
+import chivasFem from '../../assets/Chivas_fem.png'
+import Footer from "../Footer";
 
 const ChivasFemenil = () => {
   const sectionVideos = videoData.filter(video => video.category === "Chivas Femenil");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
-        <div className="hero-overlay">
-          <div className="hero-text">
-            <h1>Chivas Femenil</h1>
-            <p>Disfruta del contenido más exclusivo de chivas femenil.</p>
-          </div>
+    <section className="hero-femenil" style={{ backgroundImage: `url(${chivasFem})` }}>
+      <div className="hero-overlay">
+        <div className="hero-text">
+          <h1>Chivas Femenil</h1>
+          <p>Disfruta del contenido más exclusivo de chivas femenil.</p>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Grid de videos */}
       <section className="seccion">
@@ -35,6 +36,7 @@ const ChivasFemenil = () => {
             ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

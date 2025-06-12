@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import leyenda from '../../assets/img_seccion/leyendasForo.png'
+import Footer from "../Footer";
 
 const Leyendas = () => {
   const sectionVideos = videoData.filter(video => video.category === "Leyendas");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${leyenda})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Leyendas</h1>
-            <p>Disfruta del contenido más exclusivo de leyendas.</p>
+            <p>Disfruta del contenido más exclusivo de las Leyendas</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const Leyendas = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

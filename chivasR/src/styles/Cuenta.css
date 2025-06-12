@@ -8,7 +8,7 @@
 }
 
 .cuenta-left {
-  background-color: #0c2869;
+  background-color: #07266f;
   color: white;
   padding: 30px;
   border-radius: 16px;
@@ -46,7 +46,7 @@
 
 .plan-box {
   background-color: white;
-  border: 6px solid #0c2869;
+  border: 6px solid #07266f;
   border-radius: 10px;
   padding: 20px;
   cursor: pointer;
@@ -55,9 +55,9 @@
 }
 
 .plan-box:hover {
-  background-color: #e53935;
+  background-color: #ff1e1a;
   color: white;
-  border-color: #e53935;
+  border-color: #ff1e1a;
 }
 
 .plan-box h4 {
@@ -89,7 +89,7 @@
 }
 
 .modal-content {
-  background: #0c2869;
+  background: #07266f;
   padding: 30px;
   border-radius: 12px;
   width: 400px;
@@ -98,7 +98,7 @@
 
 .modal-content button {
   margin-top: 20px;
-  background-color: #0c2869;
+  background-color: #07266f;
   color: white;
   border: none;
   padding: 12px;

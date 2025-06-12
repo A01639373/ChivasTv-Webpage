@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import nacionChivas from '../../assets/img_seccion/nacionChivas.png'
+import Footer from "../Footer";
 
 const NaciónChivas = () => {
   const sectionVideos = videoData.filter(video => video.category === "Nación Chivas");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${nacionChivas})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
-            <h1>Nación Chivas</h1>
-            <p>Disfruta del contenido más exclusivo de nación chivas.</p>
+            <h1>Nacion Chivas</h1>
+            <p>Disfruta del contenido más exclusivo de la Nacion Chivas</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const NaciónChivas = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

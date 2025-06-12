@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import podcast from '../../assets/img_seccion/podcast.png'
+import Footer from "../Footer";
 
 const ElPodcastDeLasChivas = () => {
   const sectionVideos = videoData.filter(video => video.category === "El Podcast De Las Chivas");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${podcast})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
-            <h1>El Podcast De Las Chivas</h1>
-            <p>Disfruta del contenido más exclusivo de el podcast de las chivas.</p>
+            <h1>Podcast de Chivas</h1>
+            <p>Disfruta del contenido más exclusivo del Podcast de Chivas</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const ElPodcastDeLasChivas = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

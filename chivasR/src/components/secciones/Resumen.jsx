@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import resumenes from '../../assets/img_seccion/Resumen.png'
+import Footer from "../Footer";
 
 const Resumen = () => {
   const sectionVideos = videoData.filter(video => video.category === "Resumen");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${resumenes})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
-            <h1>Resumen</h1>
-            <p>Disfruta del contenido más exclusivo de resumen.</p>
+            <h1>Resumenes de Chivas</h1>
+            <p>Disfruta del contenido más exclusivo de los resumenes de partidos de Chivas</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const Resumen = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

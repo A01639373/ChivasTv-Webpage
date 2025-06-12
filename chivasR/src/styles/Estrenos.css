@@ -83,12 +83,12 @@
   color: white;
   font-weight: 600;
   border-radius: 4px;
-  display: inline-block; /* ✅ Clave: evita que se estire */
-  width: auto;           /* ✅ No se alarga horizontalmente */
-  height: auto;          /* ✅ No se alarga verticalmente */
-  line-height: normal;   /* ✅ Elimina expansión vertical extra */
+  display: inline-block; 
+  width: auto;
+  height: auto;
+  line-height: normal;
   z-index: 2;
-  white-space: nowrap;   /* ✅ Todo en una línea */
+  white-space: nowrap;
 }
 
 

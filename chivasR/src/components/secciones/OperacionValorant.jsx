@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import valorant from '../../assets/img_seccion/operacionValorant.png'
+import Footer from "../Footer";
 
 const OperaciónValorant = () => {
   const sectionVideos = videoData.filter(video => video.category === "Operación Valorant");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${valorant})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
-            <h1>Operación Valorant</h1>
-            <p>Disfruta del contenido más exclusivo de operación valorant.</p>
+            <h1>Operacion Valorant</h1>
+            <p>Disfruta del contenido más exclusivo de Operación Valorant</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const OperaciónValorant = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

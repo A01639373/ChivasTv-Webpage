@@ -1,19 +1,16 @@
 .header {
   width: 100%;
-  background-color: #e53935;
+  background-color: #ff1e1a;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   box-sizing: border-box;
-
-  /* 🔁 Cambiado de absolute a fixed */
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
-
   z-index: 999;
   font-family: 'AntartidaRounded-Bold', sans-serif;
 }
@@ -49,17 +46,15 @@
 }
 
 .nav-item.active {
-  color: rgb(0, 0, 0);          /* o black si prefieres */
+  color: rgb(0, 0, 0);          
   font-weight: bold;
-  border-bottom: 2px solid white; /* opcional */
+  border-bottom: 2px solid white; 
 }
 
 .nav-item:hover {
-  color: #FFD700; /* dorado/mostaza */
+  color: #FFD700; 
   transition: color 0.2s ease;
 }
-
-
 
 /*Secciones*/
 .dropdown {
@@ -70,7 +65,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #0c2869;
+  background-color: #07266f;
   padding: 20px 30px;
   border-radius: 8px;
   z-index: 1000;
@@ -143,7 +138,7 @@
 
 .btn-login,
 .btn-signup {
-  background-color: #0c2869;
+  background-color: #07266f;
   border: none;
   color: white;
   padding: 6px 12px;
@@ -157,7 +152,7 @@
 
 .btn-login:hover,
 .btn-signup:hover {
-  background-color: #0a1f5c;
+  background-color: #07266f;
   transform: scale(1.05);
 }
 
@@ -197,7 +192,7 @@
 }
 
 .right-menu {
-  background: #0c2869;
+  background: #07266f;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
@@ -298,7 +293,7 @@
 }
 
 .icon:hover svg {
-  color: #0c2869;
+  color: #07266f;
   transform: scale(1.1);
 }
 
@@ -310,7 +305,7 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: #0c2869;
+  background-color: #07266f;
   padding: 50px 0;
   display: flex;
   justify-content: center;
@@ -339,5 +334,5 @@
 }
 
 .search-full input:focus {
-  border-bottom: 2px solid #0c2869;
+  border-bottom: 2px solid #07266f;
 }

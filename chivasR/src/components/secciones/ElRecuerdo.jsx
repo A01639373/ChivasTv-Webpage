@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import recuerdos from '../../assets/img_seccion/elRecuerdo.png'
+import Footer from "../Footer";
 
 const ElRecuerdo = () => {
   const sectionVideos = videoData.filter(video => video.category === "El Recuerdo");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${recuerdos}})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>El Recuerdo</h1>
-            <p>Disfruta del contenido más exclusivo de el recuerdo.</p>
+            <p>Disfruta del contenido más exclusivo del Recuerdo</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const ElRecuerdo = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

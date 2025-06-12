@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import santuario from '../../assets/img_seccion/Santuario.png'
+import Footer from "../Footer";
 
 const SantuarioRojiblanco = () => {
   const sectionVideos = videoData.filter(video => video.category === "Santuario Rojiblanco");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${santuario})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Santuario Rojiblanco</h1>
-            <p>Disfruta del contenido más exclusivo de santuario rojiblanco.</p>
+            <p>Disfruta del contenido más exclusivo del Santuario Rojiblanco</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const SantuarioRojiblanco = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import resiliencia from '../../assets/img_seccion/resiliencia.png'
+import Footer from "../Footer";
 
 const Resiliencia = () => {
   const sectionVideos = videoData.filter(video => video.category === "Resiliencia");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${resiliencia})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Resiliencia</h1>
-            <p>Disfruta del contenido más exclusivo de resiliencia.</p>
+            <p>Disfruta del contenido más exclusivo de Resiliencia</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const Resiliencia = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

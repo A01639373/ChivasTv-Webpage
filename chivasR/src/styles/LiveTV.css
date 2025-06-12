@@ -46,7 +46,7 @@
 }
 
 .time {
-  font-size: 0.8em;
+  font-size: 12px;
   color: #888;
   margin-left: 5px;
 }
@@ -64,7 +64,7 @@
 }
 
 .chat-input button {
-  background-color: #e53935;
+  background-color: #ff1e1a;
   color: white;
   border: none;
   padding: 10px 14px;

@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import ddr from '../../assets/img_seccion/DDR.png'
+import Footer from "../Footer";
 
 const DetrásDelRebaño = () => {
   const sectionVideos = videoData.filter(video => video.category === "Detrás Del Rebaño");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${ddr})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
-            <h1>Detrás Del Rebaño</h1>
-            <p>Disfruta del contenido más exclusivo de detrás del rebaño.</p>
+            <h1>Detras del Rebaño</h1>
+            <p>Disfruta del contenido más exclusivo de chivas detras del rebaño.</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const DetrásDelRebaño = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

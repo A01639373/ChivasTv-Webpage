@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import diaRojiblanco from '../../assets/img_seccion/rojiblanco.png'
+import Footer from "../Footer";
 
 const DíaADíaRojiblanco = () => {
   const sectionVideos = videoData.filter(video => video.category === "Día A Día Rojiblanco");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${diaRojiblanco})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
-            <h1>Día A Día Rojiblanco</h1>
-            <p>Disfruta del contenido más exclusivo de día a día rojiblanco.</p>
+            <h1>Dia a Dia Rojiblanco</h1>
+            <p>Disfruta del contenido más exclusivo del día a día rojiblanco</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const DíaADíaRojiblanco = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

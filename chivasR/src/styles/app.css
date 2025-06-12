@@ -1,6 +1,6 @@
 
 .app-container {
-  background-color: #0c2869;
+  background-color: #07266f;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -9,5 +9,5 @@
   position: sticky;
   top: 60px; /* Ajusta según tu Header */
   z-index: 100;
-  background-color: #0c2869;
+  background-color: #07266f;
 }

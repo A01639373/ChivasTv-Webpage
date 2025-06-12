@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import sub from '../../assets/img_seccion/subChivas.png'
+import Footer from "../Footer";
 
 const Subs = () => {
   const sectionVideos = videoData.filter(video => video.category === "Sub's");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${sub})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
-            <h1>Sub's</h1>
-            <p>Disfruta del contenido más exclusivo de sub's.</p>
+            <h1>Equipo sub</h1>
+            <p>Disfruta del contenido más exclusivo del equipo Sub</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const Subs = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

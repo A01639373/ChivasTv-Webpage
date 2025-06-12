@@ -11,7 +11,6 @@ function App() {
 
   return (
     <>
-      {/* ✅ Y envuelves tu contenido con un contenedor que tenga padding-top */}
       <main className="page-content">
         <div className={`app-container ${showSearch ? "with-search" : ""}`}>
           <MainImage />

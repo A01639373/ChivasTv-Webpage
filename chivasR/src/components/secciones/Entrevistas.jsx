@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import entrevista from '../../assets/img_seccion/entrevistas.png'
+import Footer from "../Footer";
 
 const Entrevistas = () => {
   const sectionVideos = videoData.filter(video => video.category === "Entrevistas");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${entrevista})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Entrevistas</h1>
-            <p>Disfruta del contenido más exclusivo de entrevistas.</p>
+            <p>Disfruta del entrevistas exlusivas a Chivas</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const Entrevistas = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

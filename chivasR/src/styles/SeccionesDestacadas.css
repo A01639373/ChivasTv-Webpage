@@ -7,9 +7,8 @@
   max-width: 1000px;
 }
 
-
 .seccion-card {
-  width: 200px;                  /* ✅ tamaño fijo */
+  width: 200px;
   height: 250px;
   background-color: #111;
   border-radius: 16px;

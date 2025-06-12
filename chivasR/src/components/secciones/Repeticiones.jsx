@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import repeticiones from '../../assets/img_seccion/repeticiones.png'
+import Footer from "../Footer";
 
 const Repeticiones = () => {
   const sectionVideos = videoData.filter(video => video.category === "Repeticiones");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${repeticiones})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Repeticiones</h1>
-            <p>Disfruta del contenido más exclusivo de repeticiones.</p>
+            <p>Disfruta del contenido más exclusivo de repeticiones</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const Repeticiones = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

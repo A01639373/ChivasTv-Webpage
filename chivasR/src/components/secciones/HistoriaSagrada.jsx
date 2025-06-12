@@ -3,18 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
+import historia from '../../assets/img_seccion/historiaSagrada.png'
+import Footer from "../Footer";
 
 const HistoriaSagrada = () => {
   const sectionVideos = videoData.filter(video => video.category === "Historia Sagrada");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${historia})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Historia Sagrada</h1>
-            <p>Disfruta del contenido más exclusivo de historia sagrada.</p>
+            <p>Disfruta del contenido más exclusivo de la historia Sagrada</p>
           </div>
         </div>
       </section>
@@ -35,6 +36,7 @@ const HistoriaSagrada = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import highlights from '../../assets/img_seccion/highlights.png'
+import Footer from "../Footer";
 
 const HighlightsOnField = () => {
   const sectionVideos = videoData.filter(video => video.category === "Highlights On Field");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${highlights})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
-            <h1>Highlights On Field</h1>
-            <p>Disfruta del contenido más exclusivo de highlights on field.</p>
+            <h1>Highlights</h1>
+            <p>Disfruta los mejores highlights de Chivas</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const HighlightsOnField = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

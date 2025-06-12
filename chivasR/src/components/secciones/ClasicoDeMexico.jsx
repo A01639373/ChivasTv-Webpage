@@ -3,19 +3,19 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import clasicos from '../../assets/img_seccion/clasico.png'
+import Footer from "../Footer";
 
 const ClásicoDeMéxico = () => {
   const sectionVideos = videoData.filter(video => video.category === "Clásico De México");
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${clasicos})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
-            <h1>Clásico De México</h1>
-            <p>Disfruta del contenido más exclusivo de clásico de méxico.</p>
+            <h1>Clasico de Mexico</h1>
+            <p>Disfruta del contenido más exclusivo del clasico de Mexico.</p>
           </div>
         </div>
       </section>
@@ -36,6 +36,7 @@ const ClásicoDeMéxico = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };

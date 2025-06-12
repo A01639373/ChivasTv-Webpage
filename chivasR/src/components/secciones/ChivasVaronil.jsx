@@ -3,6 +3,8 @@ import React from 'react';
 import '../../styles/Seccion.css';
 import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
+import chivasMasc from '../../assets/img_seccion/ChivasVaronil.png'
+import Footer from "../Footer";
 
 
 const ChivasVaronil = () => {
@@ -10,8 +12,7 @@ const ChivasVaronil = () => {
 
   return (
     <>
-      {/* Hero estilo DAZN */}
-      <section className="hero-femenil">
+      <section className="hero-femenil" style={{ backgroundImage: `url(${chivasMasc})` }}>
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Chivas Varonil</h1>
@@ -36,6 +37,7 @@ const ChivasVaronil = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 };
