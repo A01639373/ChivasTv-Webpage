@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import '../styles/MainImage.css';
 
 import slide1 from '../assets/Chivas_Partido.png'
@@ -16,21 +17,24 @@ function MainImage() {
       subtitle: "Revive los mejores momentos del clásico",
       img: slide1,
       button: "Ver ahora",
-      position: 'center 40%'
+      position: 'center 40%',
+      link: "/clsico-de-mxico"
     },
     {
       title: "RAICES",
       subtitle: "Conoce la travesía detras de los jugadores y cuerpo tecnico de Chivas",
       img: slide2,
       button: "Explorar",
-      position: 'center 20%'
+      position: 'center 20%',
+      link: "/races"
     },
     {
       title: "EQUIPO CHIVAS FEMENIL",
       subtitle: "Lo mejor de la liga femenil en exclusiva",
       img: slide3,
       button: "Explorar",
-      position: 'center 30%'
+      position: 'center 30%',
+      link: "/chivas-femenil"
     }
   ];
 
@@ -68,7 +72,9 @@ function MainImage() {
       <div className="overlay">
         <h1>{currentItem.title}</h1>
         <p>{currentItem.subtitle}</p>
-        <button className="cta-button">{currentItem.button}</button>
+        <Link to={currentItem.link} className="cta-button">
+        {currentItem.button}
+        </Link>
       </div>
 
       <div className="controls">

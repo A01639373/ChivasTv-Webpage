@@ -85,3 +85,16 @@ html, body {
   scroll-behavior: auto;
   background-color: #07266f;
 }
+
+
+::-webkit-scrollbar {
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background: #550100;
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(#ff0400, #ad0300) ;
+}

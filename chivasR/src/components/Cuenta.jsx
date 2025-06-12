@@ -3,16 +3,30 @@ import '../styles/Cuenta.css';
 
 const Cuenta = () => {
   const [userEmail, setUserEmail] = useState('');
+  const [userNombre, setUserNombre] = useState('');
+  const [userGenero, setUserGenero] = useState('');
+  const [userFecha, setUserFecha] = useState('');
+  const [userDomicilio, setUserDomicilio] = useState('');
   const [isPremium, setIsPremium] = useState(false);
   const [plan, setPlan] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('');
 
   useEffect(() => {
-    const email = localStorage.getItem('user');
+    // Asumiendo que tienes diferentes keys en localStorage para cada campo
+    const email = localStorage.getItem('userEmail') || localStorage.getItem('user') || '';
+    const nombre = localStorage.getItem('userNombre') || '';
+    const genero = localStorage.getItem('userGenero') || '';
+    const fecha = localStorage.getItem('userFecha') || '';
+    const domicilio = localStorage.getItem('userDomicilio') || '';
     const premiumStatus = localStorage.getItem('premium') === 'true';
     const userPlan = localStorage.getItem('plan') || 'Ninguno';
+    
     setUserEmail(email);
+    setUserNombre(nombre);
+    setUserGenero(genero);
+    setUserFecha(fecha);
+    setUserDomicilio(domicilio);
     setIsPremium(premiumStatus);
     setPlan(userPlan);
   }, []);
@@ -26,6 +40,10 @@ const Cuenta = () => {
     <div className="cuenta-grid">
       <div className="cuenta-left gratis">
         <h2>Mi Cuenta</h2>
+        <p><strong>Nombre:</strong> {userNombre}</p>
+        <p><strong>Género:</strong> {userGenero}</p>
+        <p><strong>Fecha de nacimiento:</strong> {userFecha}</p>
+        <p><strong>Domicilio:</strong> {userDomicilio}</p>
         <p><strong>Correo:</strong> {userEmail}</p>
         <p><strong>Estado:</strong> Cuenta Gratuita</p>
         <p><strong>Plan:</strong> {plan}</p>

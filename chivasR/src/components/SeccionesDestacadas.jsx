@@ -9,10 +9,11 @@ const SeccionesDestacadas = ({ filter }) => {
   );
 
   const videosParaMostrar = [];
+  const videosEstreno = [];
   const categoriasUsadas = new Set();
   
   for (const video of videosFilterados) {
-    if (videosParaMostrar.length >= 8) break;
+    if (videosParaMostrar.length >= 10) break;
     
     const videosDeEstaCategoria = videosParaMostrar.filter(v => v.category === video.category).length;
     if (videosDeEstaCategoria < 4) {
