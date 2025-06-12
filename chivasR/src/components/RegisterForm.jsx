@@ -13,6 +13,7 @@ const RegisterForm = () => {
     nombre:'',
     apellido:'',
     genero:'',
+    fechaNacimiento:'',
     ocupacion:'',
     email:'',
     contraseña:'',
@@ -87,6 +88,10 @@ const RegisterForm = () => {
       errors.genero = 'Selecciona tu género';
     }else if(formValues.genero ==''){
       errors.genero = 'Selecciona tu género';
+    }
+
+    if (!formValues.fechaNacimiento) {
+      errors.fechaNacimiento = 'Inserta tu fecha de nacimiento';
     }
     
     if (!formValues.ocupacion) {
@@ -166,7 +171,18 @@ const RegisterForm = () => {
             <option value='Desempleado'>Desemplead@</option>
             <option value='Estudiante'>Estudiante</option>
           </select>
-          <p>{formErrors.ocupacion}</p>          
+          <p>{formErrors.ocupacion}</p>
+
+          <label htmlFor='fechaNacimiento'>Fecha de nacimiento</label>
+          <input
+            type="date"
+            name="fechaNacimiento"
+            value={formValues.fechaNacimiento}
+            placeholder="Ingrese fecha de nacimiento"
+            onChange={handleChange}
+          />
+          <p>{formErrors.fechaNacimiento}</p>
+       
           
           <label htmlFor='email'>Correo*</label>
           <input 
