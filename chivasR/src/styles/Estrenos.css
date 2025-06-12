@@ -2,6 +2,7 @@
   padding: 30px;
   background-color: #0c2869; /* Azul Chivas */
   color: white;
+  align-items: center;
 }
 
 .secciones-grid {
