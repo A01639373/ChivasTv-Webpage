@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 2fr;
   gap: 40px;
   padding: 40px;
-  background-color: #f2f2f2;
+  background-color: #fff;
   min-height: 100vh;
 }
 
@@ -17,7 +17,6 @@
   align-self: center; /* <- centra verticalmente */
 }
 
-
 .cuenta-left h2 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -25,10 +24,17 @@
 
 .cuenta-right {
   padding: 20px;
+  color:#0c2869;
 }
 
-.cuenta-right h3 {
-  font-size: 20px;
+.cuenta-right h2 {
+  padding: 40px;
+  font-size: 40px;
+  color:#0c2869;
+}
+
+.cuenta-right h4 {
+  font-size: 200px;
   margin-bottom: 20px;
 }
 
@@ -40,7 +46,7 @@
 
 .plan-box {
   background-color: white;
-  border: 2px solid #0c2869;
+  border: 6px solid #0c2869;
   border-radius: 10px;
   padding: 20px;
   cursor: pointer;
@@ -83,7 +89,7 @@
 }
 
 .modal-content {
-  background: white;
+  background: #0c2869;
   padding: 30px;
   border-radius: 12px;
   width: 400px;
@@ -98,5 +104,5 @@
   padding: 12px;
   width: 100%;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: pointer;
 }

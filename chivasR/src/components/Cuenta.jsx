@@ -32,7 +32,7 @@ const Cuenta = () => {
       </div>
 
       <div className="cuenta-right">
-        <h3>Elige tu plan</h3>
+        <h2>Elige tu plan</h2>
         <div className="planes-container">
           <div className="plan-box" onClick={() => handleSelectPlan('Anual MX$399')}>
             <h4>SUSCRIPCIÓN ANUAL</h4>
