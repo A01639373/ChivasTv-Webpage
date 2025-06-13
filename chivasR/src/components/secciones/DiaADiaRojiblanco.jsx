@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import Footer from '../Footer'; // o la ruta correcta según tu estructura
-
+import diaRojiblanco from '../../assets/img_seccion/rojiblanco.png'
+import Footer from "../Footer";
 
 const DíaADíaRojiblanco = () => {
   const [videos, setVideos] = useState([]);
@@ -26,15 +26,14 @@ const DíaADíaRojiblanco = () => {
 
   return (
     <>
-      {/* Hero superior estilo DAZN */}
-      <section className="hero-femenil">
-        <div className="hero-overlay">
-          <div className="hero-text">
-            <h1>Dia a Dia Rojiblanco</h1>
-            <p>Disfruta del contenido más exclusivo del día a día rojiblanco</p>
-          </div>
+    <section className="hero-femenil" style={{ backgroundImage: `url(${diaRojiblanco})` }}>
+      <div className="hero-overlay">
+        <div className="hero-text">
+          <h1>Dia a dia Rojiblanco</h1>
+          <p>Disfruta del contenido más exclusivo del dia a dia Rojiblanco</p>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Grid visual de tarjetas de video */}
       <section className="seccion">

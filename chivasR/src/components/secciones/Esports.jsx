@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import Footer from '../Footer'; // o la ruta correcta según tu estructura
-
+import esport from '../../assets/img_seccion/esports.png'
+import Footer from "../Footer";
 
 const Esports = () => {
   const [videos, setVideos] = useState([]);
@@ -26,15 +26,14 @@ const Esports = () => {
 
   return (
     <>
-      {/* Hero superior con branding de sección */}
-      <section className="hero-femenil">
-        <div className="hero-overlay">
-          <div className="hero-text">
-            <h1>Chivas Esports</h1>
-            <p>Disfruta del contenido más exclusivo de chivas Esports.</p>
-          </div>
+    <section className="hero-femenil" style={{ backgroundImage: `url(${esport})` }}>
+      <div className="hero-overlay">
+        <div className="hero-text">
+          <h1>Esports</h1>
+          <p>Disfruta del contenido más exclusivo de los Esports Chivas</p>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Cuadrícula de videos */}
       <section className="seccion">

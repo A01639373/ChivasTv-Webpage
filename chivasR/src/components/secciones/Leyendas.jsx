@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import Footer from '../Footer'; // o la ruta correcta según tu estructura
-
+import leyenda from '../../assets/img_seccion/leyendasForo.png'
+import Footer from "../Footer";
 
 const Leyendas = () => {
   const [videos, setVideos] = useState([]);
@@ -26,15 +26,14 @@ const Leyendas = () => {
 
   return (
     <>
-      {/* Hero visual tipo DAZN */}
-      <section className="hero-femenil">
-        <div className="hero-overlay">
-          <div className="hero-text">
-            <h1>Leyendas</h1>
-            <p>Disfruta del contenido más exclusivo de las Leyendas</p>
-          </div>
+    <section className="hero-femenil" style={{ backgroundImage: `url(${leyenda})` }}>
+      <div className="hero-overlay">
+        <div className="hero-text">
+          <h1>Leyendas</h1>
+          <p>Disfruta del contenido más exclusivo de las leyendas de Chivas</p>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Cuadrícula de videos */}
       <section className="seccion">

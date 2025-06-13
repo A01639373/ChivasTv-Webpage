@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import Footer from '../Footer'; // o la ruta correcta según tu estructura
-
+import clasicos from '../../assets/img_seccion/clasico.png'
+import Footer from "../Footer";
 
 const ClásicoDeMéxico = () => {
   const [videos, setVideos] = useState([]);
@@ -17,10 +17,10 @@ const ClásicoDeMéxico = () => {
         return res.json();
       })
       .then(data => {
-        setVideos(data); // ✅ Usa videos reales del backend
+        setVideos(data); // Usa videos reales del backend
       })
       .catch(() => {
-        // 🔁 Fallback si el backend falla
+        // Fallback si el backend falla
         const fallback = mockVideos.filter(v => v.category === "Clásico De México");
         setVideos(fallback);
       });
@@ -28,17 +28,16 @@ const ClásicoDeMéxico = () => {
 
   return (
     <>
-      {/* 🟥 Hero principal estilo DAZN */}
-      <section className="hero-femenil">
-        <div className="hero-overlay">
-          <div className="hero-text">
-            <h1>Clasico de Mexico</h1>
-            <p>Disfruta del contenido más exclusivo del clasico de Mexico.</p>
-          </div>
+    <section className="hero-femenil" style={{ backgroundImage: `url(${clasicos})` }}>
+      <div className="hero-overlay">
+        <div className="hero-text">
+          <h1>Clasico de Mexico</h1>
+          <p>Disfruta del contenido más exclusivo del clasico de Mexico</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* 🎬 Grid de tarjetas de video */}
+      {/*Grid de tarjetas de video */}
       <section className="seccion">
         <div className="grid">
           {videos.map((video) => (
