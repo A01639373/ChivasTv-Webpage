@@ -12,6 +12,7 @@ import RegisterForm from './src/components/RegisterForm.jsx';
 import VideoDetail from './src/components/VideoDetail.jsx';
 import Cuenta from './src/components/Cuenta.jsx';
 import LiveTv from './src/components/LiveTV.jsx';
+import Agregar from "./src/components/Agregar.jsx"; 
 
 import './index.css';
 
@@ -51,9 +52,9 @@ const Root = () => {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/chivas-femenil" element={<ChivasFemenil />} />
         <Route path="/chivas-varonil" element={<ChivasVaronil />} />
-        <Route path="/clsico-de-mxico" element={<ClasicoDeMexico />} />
-        <Route path="/detrs-del-rebao" element={<DetrasDelRebano />} />
-        <Route path="/da-a-da-rojiblanco" element={<DiaADiaRojiblanco />} />
+        <Route path="/clasico-de-mexico" element={<ClasicoDeMexico />} />
+        <Route path="/detras-del-rebano" element={<DetrasDelRebano />} />
+        <Route path="/dia-a-dia-rojiblanco" element={<DiaADiaRojiblanco />} />
         <Route path="/el-podcast-de-las-chivas" element={<ElPodcastDeLasChivas />} />
         <Route path="/el-recuerdo" element={<ElRecuerdo />} />
         <Route path="/entrevistas" element={<Entrevistas />} />
@@ -61,9 +62,9 @@ const Root = () => {
         <Route path="/highlights-on-field" element={<HighlightsOnField />} />
         <Route path="/historia-sagrada" element={<HistoriaSagrada />} />
         <Route path="/leyendas" element={<Leyendas />} />
-        <Route path="/nacin-chivas" element={<NacionChivas />} />
-        <Route path="/operacin-valorant" element={<OperacionValorant />} />
-        <Route path="/races" element={<Raices />} />
+        <Route path="/nacion-chivas" element={<NacionChivas />} />
+        <Route path="/operacion-valorant" element={<OperacionValorant />} />
+        <Route path="/raices" element={<Raices />} />
         <Route path="/repeticiones" element={<Repeticiones />} />
         <Route path="/resiliencia" element={<Resiliencia />} />
         <Route path="/resumen" element={<Resumen />} />
@@ -72,6 +73,7 @@ const Root = () => {
         <Route path="/video/:id" element={<VideoDetail />} />
         <Route path="/cuenta" element={<Cuenta />} />
         <Route path="/LiveTV" element={<LiveTV />} />
+        //<Route path="/agregar-video" element={<Agregar />} />
 
       </Routes>
     </BrowserRouter>

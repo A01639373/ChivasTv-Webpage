@@ -3,42 +3,45 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import chivasMasc from '../../assets/img_seccion/ChivasVaronil.png'
+import chivasMasc from '../../assets/img_seccion/ChivasVaronil.png';
 import Footer from "../Footer";
-
 
 const ChivasVaronil = () => {
   const [videos, setVideos] = useState([]);
+  const categoria = "Chivas Varonil";
 
   useEffect(() => {
-    // Llama al backend con la categoría correspondiente
-    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Chivas Varonil`)
+    const url = `${import.meta.env.VITE_BACKEND_API_URL}/video/categoria/${encodeURIComponent(categoria)}`;
+    fetch(url, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    })
       .then(res => {
         if (!res.ok) throw new Error("Backend no disponible");
         return res.json();
       })
       .then(data => {
-        setVideos(data); // Usa los datos del backend si responde bien
+        console.log(`📺 Videos recibidos (${categoria}):`, data);
+        setVideos(Array.isArray(data) ? data : []);
       })
       .catch(() => {
-        // Fallback: usa el JSON local si falla la API
-        const fallback = mockVideos.filter(video => video.category === "Chivas Varonil");
+        const fallback = mockVideos.filter(video => video.category === categoria);
         setVideos(fallback);
       });
   }, []);
 
   return (
     <>
-    <section className="hero-femenil" style={{ backgroundImage: `url(${chivasMasc})` }}>
-      <div className="hero-overlay">
-        <div className="hero-text">
-          <h1>Chivas Varonil</h1>
-          <p>Disfruta del contenido más exclusivo del equipo Varonil de Chivas</p>
+      <section className="hero-femenil" style={{ backgroundImage: `url(${chivasMasc})` }}>
+        <div className="hero-overlay">
+          <div className="hero-text">
+            <h1>{categoria}</h1>
+            <p>Disfruta del contenido más exclusivo del equipo Varonil de Chivas</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-      {/* Grid visual de videos */}
       <section className="seccion">
         <div className="grid">
           {videos.map((video) => (
@@ -60,3 +63,4 @@ const ChivasVaronil = () => {
 };
 
 export default ChivasVaronil;
+

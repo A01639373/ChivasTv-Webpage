@@ -3,41 +3,45 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import ddr from '../../assets/img_seccion/DDR.png'
+import ddr from '../../assets/img_seccion/DDR.png';
 import Footer from "../Footer";
 
 const DetrásDelRebaño = () => {
   const [videos, setVideos] = useState([]);
+  const categoria = "Detrás Del Rebaño";
 
   useEffect(() => {
-    // Llamar al backend por videos de "Detrás Del Rebaño"
-    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Detrás Del Rebaño`)
+    const url = `${import.meta.env.VITE_BACKEND_API_URL}/video/categoria/${encodeURIComponent(categoria)}`;
+    fetch(url, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    })
       .then(res => {
         if (!res.ok) throw new Error("Error en la API");
         return res.json();
       })
       .then(data => {
-        setVideos(data);
+        console.log(`📺 Videos recibidos (${categoria}):`, data);
+        setVideos(Array.isArray(data) ? data : []);
       })
       .catch(() => {
-        // Fallback: usa el JSON local si el fetch falla
-        const fallback = mockVideos.filter(v => v.category === "Detrás Del Rebaño");
+        const fallback = mockVideos.filter(v => v.category === categoria);
         setVideos(fallback);
       });
   }, []);
 
   return (
     <>
-    <section className="hero-femenil" style={{ backgroundImage: `url(${ddr})` }}>
-      <div className="hero-overlay">
-        <div className="hero-text">
-          <h1>Detras del Rebaño</h1>
-          <p>Disfruta del contenido más exclusivo de detras del Rebaño</p>
+      <section className="hero-femenil" style={{ backgroundImage: `url(${ddr})` }}>
+        <div className="hero-overlay">
+          <div className="hero-text">
+            <h1>Detrás del Rebaño</h1>
+            <p>Disfruta del contenido más exclusivo de Detrás del Rebaño</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-      {/* Grid visual de tarjetas de video */}
       <section className="seccion">
         <div className="grid">
           {videos.map((video) => (
@@ -59,3 +63,4 @@ const DetrásDelRebaño = () => {
 };
 
 export default DetrásDelRebaño;
+

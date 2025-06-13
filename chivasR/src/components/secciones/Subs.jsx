@@ -1,23 +1,23 @@
-// components/secciones/Subs.jsx
+// ✅ Sección estandarizada para "Sub's"
 import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import sub from '../../assets/img_seccion/subChivas.png'
+import sub from '../../assets/img_seccion/subChivas.png';
 import Footer from "../Footer";
 
 const Subs = () => {
   const [videos, setVideos] = useState([]);
+  const categoria = "Sub's";
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Sub%27s`) // Sub's => Sub%27s
-      .then(res => {
-        if (!res.ok) throw new Error("Error en el backend");
-        return res.json();
-      })
-      .then(data => setVideos(data))
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/categoria/${encodeURIComponent(categoria)}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    })
+      .then(res => res.ok ? res.json() : Promise.reject())
+      .then(data => setVideos(Array.isArray(data) ? data : []))
       .catch(() => {
-        const fallback = mockVideos.filter(v => v.category === "Sub's");
+        const fallback = mockVideos.filter(v => v.category === categoria);
         setVideos(fallback);
       });
   }, []);
@@ -33,7 +33,6 @@ const Subs = () => {
         </div>
       </section>
 
-      {/* Grid de videos */}
       <section className="seccion">
         <div className="grid">
           {videos.map((video) => (

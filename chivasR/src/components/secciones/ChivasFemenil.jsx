@@ -3,41 +3,46 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import Footer from '../Footer'; // o la ruta correcta según tu estructura
+import Footer from '../Footer';
 import chivasFem from '../../assets/Chivas_fem.png';
-
 
 const ChivasFemenil = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Chivas Femenil`)
+    const categoria = "Chivas Femenil";
+    const url = `${import.meta.env.VITE_BACKEND_API_URL}/video/categoria/${encodeURIComponent(categoria)}`;
+
+    fetch(url, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    })
       .then(res => {
         if (!res.ok) throw new Error("Backend no disponible");
         return res.json();
       })
       .then(data => {
-        setVideos(data);
+        console.log("📺 Videos recibidos (Chivas Femenil):", data);
+        setVideos(Array.isArray(data) ? data : []);
       })
       .catch(() => {
-        // fallback al JSON local si el backend no está listo
-        const fallback = mockVideos.filter(video => video.category === "Chivas Femenil");
+        const fallback = mockVideos.filter(video => video.category === categoria);
         setVideos(fallback);
       });
   }, []);
 
   return (
     <>
-    <section className="hero-femenil" style={{ backgroundImage: `url(${chivasFem})` }}>
-      <div className="hero-overlay">
-        <div className="hero-text">
-          <h1>Chivas Femenil</h1>
-          <p>Disfruta del contenido más exclusivo de chivas femenil.</p>
+      <section className="hero-femenil" style={{ backgroundImage: `url(${chivasFem})` }}>
+        <div className="hero-overlay">
+          <div className="hero-text">
+            <h1>Chivas Femenil</h1>
+            <p>Disfruta del contenido más exclusivo de Chivas Femenil.</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-      {/* Grid de videos */}
       <section className="seccion">
         <div className="grid">
           {videos.map((video) => (
@@ -53,6 +58,7 @@ const ChivasFemenil = () => {
           ))}
         </div>
       </section>
+
       <Footer />
     </>
   );

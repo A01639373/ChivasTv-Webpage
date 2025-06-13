@@ -3,41 +3,47 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import clasicos from '../../assets/img_seccion/clasico.png'
+import clasicos from '../../assets/img_seccion/clasico.png';
 import Footer from "../Footer";
 
 const ClásicoDeMéxico = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    // Llamar a la API para obtener videos de la categoría "Clásico De México"
-    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Clásico De México`)
+    const categoria = "Clásico De México";
+    const url = `${import.meta.env.VITE_BACKEND_API_URL}/video/categoria/${encodeURIComponent(categoria)}`;
+
+    fetch(url, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    })
       .then(res => {
         if (!res.ok) throw new Error("Error en la API");
         return res.json();
       })
       .then(data => {
-        setVideos(data); // Usa videos reales del backend
+        console.log("📺 Contenido de videos:", data);
+        console.log("🧪 Es array?", Array.isArray(data));
+        setVideos(Array.isArray(data) ? data : []);
       })
       .catch(() => {
-        // Fallback si el backend falla
-        const fallback = mockVideos.filter(v => v.category === "Clásico De México");
+        const fallback = mockVideos.filter(v => v.category === categoria);
         setVideos(fallback);
       });
   }, []);
 
   return (
     <>
-    <section className="hero-femenil" style={{ backgroundImage: `url(${clasicos})` }}>
-      <div className="hero-overlay">
-        <div className="hero-text">
-          <h1>Clasico de Mexico</h1>
-          <p>Disfruta del contenido más exclusivo del clasico de Mexico</p>
+      <section className="hero-femenil" style={{ backgroundImage: `url(${clasicos})` }}>
+        <div className="hero-overlay">
+          <div className="hero-text">
+            <h1>Clásico de México</h1>
+            <p>Disfruta del contenido más exclusivo del clásico de México</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-      {/*Grid de tarjetas de video */}
       <section className="seccion">
         <div className="grid">
           {videos.map((video) => (
@@ -53,9 +59,11 @@ const ClásicoDeMéxico = () => {
           ))}
         </div>
       </section>
+
       <Footer />
     </>
   );
 };
 
 export default ClásicoDeMéxico;
+

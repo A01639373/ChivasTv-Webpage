@@ -1,114 +1,82 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import '../styles/VideoDetail.css';
 
 const VideoDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [video, setVideo] = useState(null);
+  const [user, setUser] = useState(null);
   const [showComments, setShowComments] = useState(false);
   const [recommendations, setRecommendations] = useState([]);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
-  // 🔁 Cargar video desde backend
+// Obtener perfil de usuario
+useEffect(() => {
+  fetch(`${import.meta.env.VITE_BACKEND_API_URL}/user/`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`
+    }
+  })
+    .then(res => res.json())
+    .then(data => {
+      console.log("👤 Perfil de usuario recibido:", data); // 👈 AQUI
+      console.log("👤 Tipo de suscripción:", data.role); // 👈 AQUI
+      setUser(data);
+    })
+    .catch(err => {
+      console.error("❌ Error al obtener perfil:", err);
+    });
+}, []);
+
+  // Cargar video
   useEffect(() => {
     const token = localStorage.getItem("token");
-
     fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/${id}`, {
       headers: token ? { Authorization: `Bearer ${token}` } : {}
     })
       .then((res) => {
-        if (res.status === 403) throw new Error("Contenido exclusivo para suscriptores");
+        if (res.status === 403) throw new Error("Contenido exclusivo");
         return res.json();
       })
       .then((data) => {
-        console.log("📦 Video cargado:", data);
         const oneVideo = Array.isArray(data) ? data[0] : data;
         setVideo(oneVideo);
-      })
-      .catch((err) => {
-        console.error("Error al cargar el video:", err);
-        if (err.message.includes("exclusivo")) {
-          setVideo({ locked: true });
-        } else {
-          setVideo({
-            id: 1,
-            title: "Clásico De México Video 1",
-            category: "Clásico De México",
-            type: "suscriptor",
-            date: "10/10/2010",
-            duration: "10:03",
-            image: "",
-            url: "https://www.youtube.com/watch?v=3OdyM-Yvd3k",
-            description: "Este es un video de prueba para simular datos del backend.",
-            partido: true
-          });
-        }
+        console.log("🎥 Video cargado:", oneVideo); // ✅ Aquí
       });
   }, [id]);
 
-  // 🔁 Recomendaciones por categoría
+  // Cargar recomendaciones
   useEffect(() => {
     if (!video?.category) return;
-
     const category = typeof video.category === 'object' ? video.category.name : video.category;
 
-    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/${category}?name=${category}`, {
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/categoria/${category}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }
     })
       .then(res => res.json())
-      .then(data => setRecommendations(data))
-      .catch(() => {
-        setRecommendations([
-          {
-            id: 2,
-            title: "Resumen Jornada 5",
-            duration: "8:23",
-            category: "Femenil",
-            image: "",
-          },
-          {
-            id: 3,
-            title: "Chivas vs Pumas",
-            duration: "5:12",
-            category: "Clásico",
-            image: "",
-          },
-        ]);
+      .then(data => {
+        if (Array.isArray(data)) setRecommendations(data);
       });
   }, [video?.category]);
 
-  // 🔁 Comentarios
+  // Cargar comentarios
   useEffect(() => {
     if (!video?.id) return;
+
     fetch(`${import.meta.env.VITE_BACKEND_API_URL}/comment/${video.id}/0/10?id=mock-user`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }
     })
       .then(res => res.json())
-      .then(data => setComments(data))
-      .catch(() => {
-        setComments([
-          {
-            id: "c1",
-            user: "usuario1",
-            content: "Gran partido",
-            timestamp: "2024-12-05T14:00:00Z"
-          },
-          {
-            id: "c2",
-            user: "rojiblanco97",
-            content: "Este análisis estuvo brutal",
-            timestamp: "2024-12-05T15:30:00Z"
-          }
-        ]);
-      });
+      .then(setComments);
   }, [video?.id]);
 
-  // ➕ Publicar comentario
+  // Publicar comentario
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     if (!newComment.trim()) return;
@@ -133,13 +101,29 @@ const VideoDetail = () => {
       });
   };
 
-  if (!video) return <div className="video-detail">Cargando video...</div>;
+  // Eliminar video
+  const handleDeleteVideo = (videoId) => {
+    if (!window.confirm("¿Seguro que deseas eliminar este video?")) return;
 
-  if (video?.locked) {
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/${videoId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    })
+      .then(() => {
+        alert("✅ Video eliminado");
+        navigate("/");
+      });
+  };
+
+  if (!video || !user) return <div className="video-detail">Cargando video...</div>;
+
+  if ((video.type === "suscriptor" || video.type === "premium") && user.role !== "admin" && user.role !== "premium") {
     return (
       <div className="video-detail locked">
-        <h2>🔒 ONLY PREMIUM</h2>
-        <p>Este contenido es exclusivo para suscriptores.</p>
+        <h2>🔒 SOLO PREMIUM</h2>
+        <p>Este contenido requiere una suscripción activa.</p>
         <Link to="/cuenta" className="btn-subscribe">Hazte PREMIUM</Link>
       </div>
     );
@@ -147,27 +131,39 @@ const VideoDetail = () => {
 
   return (
     <div className="video-detail">
-      {/* 🎥 Player */}
-      <div className="video-player">
-        {(video?.url?.includes("youtube.com") || video?.url?.includes("youtu.be")) ? (
-          <iframe
-            width="100%"
-            height="480"
-            src={video.url.replace("watch?v=", "embed/").replace("youtu.be/", "youtube.com/embed/")}
-            title={video.title}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        ) : (
-          <video controls poster={video.image}>
-            <source src={video.url} type="video/mp4" />
-            Tu navegador no soporta el video.
-          </video>
+      {/* 🎥 Video + acciones */}
+      <div className="video-top-row">
+        <div className="video-player">
+          {(video.url.includes("youtube.com") || video.url.includes("youtu.be")) ? (
+            <iframe
+              width="100%"
+              height="480"
+              src={video.url.replace("watch?v=", "embed/").replace("youtu.be/", "youtube.com/embed/")}
+              title={video.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <video controls poster={video.image}>
+              <source src={video.url} type="video/mp4" />
+              Tu navegador no soporta el video.
+            </video>
+          )}
+        </div>
+
+        {user.role === "admin" && (
+          <div className="video-actions-dropdown">
+            <button className="dropdown-toggle">Opciones</button>
+            <div className="dropdown-menu">
+              <Link to="/agregar-video">➕ Agregar Video</Link>
+              <button onClick={() => handleDeleteVideo(video.id)}>🗑 Eliminar Video</button>
+            </div>
+          </div>
         )}
       </div>
 
-      {/* 📝 Header */}
+      {/* 📝 Info */}
       <div className="video-header">
         <div>
           <h1>{video.title}</h1>
@@ -220,7 +216,7 @@ const VideoDetail = () => {
           {recommendations.map((item) => (
             <Link to={`/video/${item.id}`} key={item.id} className="card">
               <div className="image-placeholder">
-                <img src={item.image}  />
+                <img src={item.image} />
                 <p className="card-date">{item.duration}</p>
               </div>
               <h3 className="card-title">{item.title}</h3>
@@ -233,4 +229,3 @@ const VideoDetail = () => {
 };
 
 export default VideoDetail;
-

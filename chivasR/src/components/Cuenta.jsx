@@ -37,10 +37,10 @@ const Cuenta = () => {
     <div className="cuenta-grid">
       <div className="cuenta-left gratis">
         <h2>Mi Cuenta</h2>
-        <p><strong>Nombre:</strong> {user?.nombre || "Cargando..."}</p>
-        <p><strong>Género:</strong> {user?.genero || "Cargando..."}</p>
-        <p><strong>Fecha de nacimiento:</strong> {user?.fechaNacimiento || "Cargando..."}</p>
-        <p><strong>Domicilio:</strong> {user?.domicilio || "Cargando..."}</p>
+        <p><strong>Nombre:</strong> {user?.name || "Cargando..."}</p>
+        <p><strong>Género:</strong> {user?.genre || "Cargando..."}</p>
+        <p><strong>Fecha de nacimiento:</strong> {user?.birth_date || "Cargando..."}</p>
+        <p><strong>Domicilio:</strong> {user?.address || "Cargando..."}</p>
         <p><strong>Correo:</strong> {user?.email || "Cargando..."}</p>
         <p><strong>Estado:</strong> Cuenta Gratuita</p>
         <p><strong>Plan:</strong> {plan}</p>

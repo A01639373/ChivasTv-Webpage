@@ -56,7 +56,7 @@ const Header = ({ showSearch, setShowSearch }) => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!event.target.closest('.header-right')) setShowRightMenu(false);
-      if (!event.target.closest('.dropdown')) setShowSections(false);
+      if (!event.target.closest('.nav-item.dropdown')) setShowSections(false);
     };
     document.addEventListener('click', handleClickOutside);
     return () => {
@@ -74,6 +74,8 @@ const Header = ({ showSearch, setShowSearch }) => {
 
   const formatRoute = (name) => {
     return '/' + name
+      .normalize('NFD')                         // separa letras de sus acentos
+      .replace(/[\u0300-\u036f]/g, '')          // elimina acentos
       .toLowerCase()
       .replace(/'/g, '')
       .replace(/[^a-z0-9 ]/g, '')
@@ -185,3 +187,4 @@ const Header = ({ showSearch, setShowSearch }) => {
 };
 
 export default Header;
+

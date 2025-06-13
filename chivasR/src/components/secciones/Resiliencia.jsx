@@ -1,23 +1,23 @@
-// components/secciones/Resiliencia.jsx
+// ✅ Sección estandarizada para "Resiliencia"
 import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import resiliencia from '../../assets/img_seccion/resiliencia.png'
+import resiliencia from '../../assets/img_seccion/resiliencia.png';
 import Footer from "../Footer";
 
 const Resiliencia = () => {
   const [videos, setVideos] = useState([]);
+  const categoria = "Resiliencia";
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Resiliencia`)
-      .then(res => {
-        if (!res.ok) throw new Error("Error en la API");
-        return res.json();
-      })
-      .then(data => setVideos(data))
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/categoria/${encodeURIComponent(categoria)}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    })
+      .then(res => res.ok ? res.json() : Promise.reject())
+      .then(data => setVideos(Array.isArray(data) ? data : []))
       .catch(() => {
-        const fallback = mockVideos.filter(v => v.category === "Resiliencia");
+        const fallback = mockVideos.filter(v => v.category === categoria);
         setVideos(fallback);
       });
   }, []);
@@ -33,7 +33,6 @@ const Resiliencia = () => {
         </div>
       </section>
 
-      {/* Grid de videos */}
       <section className="seccion">
         <div className="grid">
           {videos.map((video) => (
@@ -55,3 +54,4 @@ const Resiliencia = () => {
 };
 
 export default Resiliencia;
+

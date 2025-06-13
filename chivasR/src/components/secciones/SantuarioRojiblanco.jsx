@@ -1,23 +1,23 @@
-// components/secciones/SantuarioRojiblanco.jsx
+// ✅ Sección estandarizada para "Santuario Rojiblanco"
 import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import santuario from '../../assets/img_seccion/Santuario.png'
+import santuario from '../../assets/img_seccion/Santuario.png';
 import Footer from "../Footer";
 
 const SantuarioRojiblanco = () => {
   const [videos, setVideos] = useState([]);
+  const categoria = "Santuario Rojiblanco";
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Santuario%20Rojiblanco`)
-      .then(res => {
-        if (!res.ok) throw new Error("Error en la API");
-        return res.json();
-      })
-      .then(data => setVideos(data))
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/categoria/${encodeURIComponent(categoria)}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    })
+      .then(res => res.ok ? res.json() : Promise.reject())
+      .then(data => setVideos(Array.isArray(data) ? data : []))
       .catch(() => {
-        const fallback = mockVideos.filter(v => v.category === "Santuario Rojiblanco");
+        const fallback = mockVideos.filter(v => v.category === categoria);
         setVideos(fallback);
       });
   }, []);
@@ -33,7 +33,6 @@ const SantuarioRojiblanco = () => {
         </div>
       </section>
 
-      {/* Grid de videos */}
       <section className="seccion">
         <div className="grid">
           {videos.map((video) => (

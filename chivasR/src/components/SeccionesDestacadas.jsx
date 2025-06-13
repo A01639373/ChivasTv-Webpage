@@ -4,9 +4,6 @@ import "../styles/SeccionesDestacadas.css";
 
 const SeccionesDestacadas = ({ filter }) => {
   const [categoryVideos, setCategoryVideos] = useState({});
-  const [categorias, setCategorias] = useState([]);
-
-  // Categorías fijas
   const predefined = [
     "Clásico De México", "Santuario Rojiblanco", "Raíces",
     "Detrás Del Rebaño", "Resumen", "Repeticiones", "Resiliencia", "Chivas Femenil",
@@ -15,63 +12,54 @@ const SeccionesDestacadas = ({ filter }) => {
     "El Podcast De Las Chivas", "El Recuerdo"
   ];
 
-  // Cargar videos por categoría desde backend (o fallback con mock)
   useEffect(() => {
-    setCategorias(predefined);
+    const token = localStorage.getItem("token");
 
-    predefined.forEach(cat => {
-      fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/${cat}?name=${cat}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`
-        }
-      })
-        .then(res => res.json())
-        .then(data => {
-          setCategoryVideos(prev => ({ ...prev, [cat]: data }));
-        })
-        .catch(() => {
-          const mockVideos = [
-            {
-              id: Math.floor(Math.random() * 1000),
-              title: `${cat} Video 1`,
-              category: cat,
-              type: "suscriptor",
-              date: "10/10/2010",
-              duration: "10:03",
-              description: "Mock: video exclusivo",
-              partido: true
-            },
-            {
-              id: Math.floor(Math.random() * 1000),
-              title: `${cat} Video 2`,
-              category: cat,
-              type: "gratis",
-              date: "10/10/2010",
-              duration: "9:45",
-              description: "Mock: video gratuito",
-              partido: false
+    const fetchAll = async () => {
+      const results = await Promise.all(
+        predefined.map(async (cat) => {
+          const encoded = encodeURIComponent(cat);
+          try {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/categoria/${encodeURIComponent(cat)}`, {
+              headers: { Authorization: `Bearer ${token}` }
+            });
+            const data = await res.json();
+            console.log(`📦 Videos recibidos para ${cat}:`, data);
+
+            if (Array.isArray(data)) {
+              return { cat, videos: data };
+            } else {
+              console.warn(`⚠️ Datos inválidos para ${cat}:`, data);
+              return { cat, videos: [] };
             }
-          ].filter(v => filter === "todos" || v.type === filter);
+          } catch (err) {
+            console.error(`❌ Error en ${cat}`, err);
+            return { cat, videos: [] };
+          }
+        })
+      );
 
-          setCategoryVideos(prev => ({ ...prev, [cat]: mockVideos }));
-        });
-    });
+      const videoMap = {};
+      results.forEach(({ cat, videos }) => {
+        videoMap[cat] = videos;
+      });
+      setCategoryVideos(videoMap);
+    };
+
+    fetchAll();
   }, [filter]);
 
-  // Agrupa categorías en grupos de 5 para mostrar por fila
-  const chunk = (arr, size) => {
-    return arr.reduce((acc, _, i) => (
-      i % size === 0 ? [...acc, arr.slice(i, i + size)] : acc
-    ), []);
-  };
+  const chunk = (arr, size) => arr.reduce((acc, _, i) =>
+    i % size === 0 ? [...acc, arr.slice(i, i + size)] : acc, []
+  );
 
   const categoryGroups = chunk(predefined, 4);
 
   return (
     <div className="secciones-destacadas">
-      {categoryGroups.map((group, groupIndex) => (
-        <div key={groupIndex}>
-          {/* 🔷 Tarjetas por categoría tipo DAZN */}
+      {categoryGroups.map((group, idx) => (
+        <div key={idx}>
+          {/* Tarjetas de categoría */}
           <div className={`secciones-grid ${group.length <= 4 ? 'compact-grid' : ''}`}>
             {group.map((cat, i) => (
               <Link
@@ -84,20 +72,15 @@ const SeccionesDestacadas = ({ filter }) => {
             ))}
           </div>
 
-          {/* 🔻 Videos filtrados desde backend o mock */}
+          {/* Videos */}
           {group.flatMap(cat =>
             Array.isArray(categoryVideos[cat]) ? categoryVideos[cat] : []
-          ).filter(v => filter === "todos" || v.type === filter)
-          .slice(0, 8).length > 0 && (
+          ).filter(v => filter === "todos" || v.type === filter).length > 0 && (
             <section className="seccion">
               <div className="grid">
                 {group.flatMap(cat =>
-                  (categoryVideos[cat] || [])
-                    .filter(v => filter === "todos" || v.type === filter)
-                    .slice(0, 4)
-                )
-                .slice(0, 8)
-                .map((video) => (
+                  (categoryVideos[cat] || []).filter(v => filter === "todos" || v.type === filter).slice(0, 4)
+                ).slice(0, 8).map((video) => (
                   <Link to={`/video/${video.id}`} key={video.id} className="card">
                     <div
                       className="image-placeholder"
