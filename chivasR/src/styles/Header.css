@@ -14,12 +14,19 @@
   z-index: 999;
   font-family: 'AntartidaRounded-Bold', sans-serif;
 }
+
 .header-left .logo {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
   margin-right: 30px;
   color: white;
   text-decoration: none;
+  align-items: center;
+}
+
+.header-left .mainLogo{
+  width: 40px;
+  height: 40px;
 }
 
 .nav-menu {
@@ -55,6 +62,8 @@
   color: #FFD700; 
   transition: color 0.2s ease;
 }
+
+
 
 /*Secciones*/
 .dropdown {

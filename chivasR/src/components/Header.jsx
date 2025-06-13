@@ -6,6 +6,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import signIn from '../assets/signIn.png';
 import signOut from '../assets/signOut.png';
 import perfil from '../assets/profile.png';
+import chivasLogo from '../assets/chivas_logo.png'
 
 const Header = ({ showSearch, setShowSearch }) => {
   const [showSections, setShowSections] = useState(false);
@@ -64,6 +65,7 @@ const Header = ({ showSearch, setShowSearch }) => {
   return (
     <header className="header">
       <div className="header-left">
+        <img src={chivasLogo} className='mainLogo' alt='imageLogo'/>
         <NavLink to="/" className="logo">CHIVASTV</NavLink>
       </div>
 
