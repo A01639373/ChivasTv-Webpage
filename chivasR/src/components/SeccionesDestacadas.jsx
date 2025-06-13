@@ -49,18 +49,61 @@ const SeccionesDestacadas = ({ filter }) => {
     fetchAll();
   }, [filter]);
 
+<<<<<<< HEAD
   const chunk = (arr, size) => arr.reduce((acc, _, i) =>
     i % size === 0 ? [...acc, arr.slice(i, i + size)] : acc, []
   );
+=======
+  // Agrupa categorías en grupos de 4 para mostrar por fila
+  const chunk = (arr, size) => {
+    return arr.reduce((acc, _, i) => (
+      i % size === 0 ? [...acc, arr.slice(i, i + size)] : acc
+    ), []);
+  };
+>>>>>>> e4661bae93f300362fc2615177e53b437806b473
 
   const categoryGroups = chunk(predefined, 4);
 
+  // Obtener todos los videos filtrados
+  const allVideos = Object.values(categoryVideos)
+    .flat()
+    .filter(video => filter === "todos" || video.type === filter)
+    .slice(0, 8); // Limitar a 8 videos destacados
+
   return (
     <div className="secciones-destacadas">
+<<<<<<< HEAD
       {categoryGroups.map((group, idx) => (
         <div key={idx}>
           {/* Tarjetas de categoría */}
           <div className={`secciones-grid ${group.length <= 4 ? 'compact-grid' : ''}`}>
+=======
+      {allVideos.length > 0 && (
+        <>
+          <h3 classname='titulo-Seccion'>DESTACADOS</h3>
+          <section className="seccion">
+            <div className="grid">
+              {allVideos.map((video) => (
+                <Link to={`/video/${video.id}`} key={video.id} className="card">
+                  <div
+                    className="image-placeholder"
+                    style={{ backgroundImage: video.image ? `url(${video.image})` : 'none' }}
+                  >
+                    <span className="card-date">{video.duration}</span>
+                  </div>
+                  <h3 className="card-title">{video.title}</h3>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+
+      <h3 classname='titulo-Seccion'>CATEGORÍAS</h3>
+      <div className="categorias-container">
+        {categoryGroups.map((group, groupIndex) => (
+          <div key={groupIndex} className="secciones-grid">
+>>>>>>> e4661bae93f300362fc2615177e53b437806b473
             {group.map((cat, i) => (
               <Link
                 key={i}
@@ -71,6 +114,7 @@ const SeccionesDestacadas = ({ filter }) => {
               </Link>
             ))}
           </div>
+<<<<<<< HEAD
 
           {/* Videos */}
           {group.flatMap(cat =>
@@ -96,6 +140,10 @@ const SeccionesDestacadas = ({ filter }) => {
           )}
         </div>
       ))}
+=======
+        ))}
+      </div>
+>>>>>>> e4661bae93f300362fc2615177e53b437806b473
     </div>
   );
 };

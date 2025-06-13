@@ -12,6 +12,7 @@ const VideoDetail = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
+<<<<<<< HEAD
 // Obtener perfil de usuario
 useEffect(() => {
   fetch(`${import.meta.env.VITE_BACKEND_API_URL}/user/`, {
@@ -31,6 +32,8 @@ useEffect(() => {
 }, []);
 
   // Cargar video
+=======
+>>>>>>> e4661bae93f300362fc2615177e53b437806b473
   useEffect(() => {
     const token = localStorage.getItem("token");
     fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/${id}`, {
@@ -47,7 +50,10 @@ useEffect(() => {
       });
   }, [id]);
 
+<<<<<<< HEAD
   // Cargar recomendaciones
+=======
+>>>>>>> e4661bae93f300362fc2615177e53b437806b473
   useEffect(() => {
     if (!video?.category) return;
     const category = typeof video.category === 'object' ? video.category.name : video.category;
@@ -63,7 +69,10 @@ useEffect(() => {
       });
   }, [video?.category]);
 
+<<<<<<< HEAD
   // Cargar comentarios
+=======
+>>>>>>> e4661bae93f300362fc2615177e53b437806b473
   useEffect(() => {
     if (!video?.id) return;
 
@@ -76,7 +85,10 @@ useEffect(() => {
       .then(setComments);
   }, [video?.id]);
 
+<<<<<<< HEAD
   // Publicar comentario
+=======
+>>>>>>> e4661bae93f300362fc2615177e53b437806b473
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     if (!newComment.trim()) return;
@@ -131,6 +143,7 @@ useEffect(() => {
 
   return (
     <div className="video-detail">
+<<<<<<< HEAD
       {/* 🎥 Video + acciones */}
       <div className="video-top-row">
         <div className="video-player">
@@ -164,6 +177,26 @@ useEffect(() => {
       </div>
 
       {/* 📝 Info */}
+=======
+      <div className="video-player">
+        {(video?.url?.includes("youtube.com") || video?.url?.includes("youtu.be")) ? (
+          <iframe
+            width="100%"
+            height="480"
+            src={video.url.replace("watch?v=", "embed/").replace("youtu.be/", "youtube.com/embed/")}
+            title={video.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        ) : (
+          <video controls poster={video.image}>
+            <source src={video.url} type="video/mp4" />
+            Tu navegador no soporta el video.
+          </video>
+        )}
+      </div>
+
+>>>>>>> e4661bae93f300362fc2615177e53b437806b473
       <div className="video-header">
         <div>
           <h1>{video.title}</h1>
@@ -177,12 +210,10 @@ useEffect(() => {
         )}
       </div>
 
-      {/* 🧾 Descripción */}
       <div className="video-description">
         {video.description || "Este video aún no tiene descripción"}
       </div>
 
-      {/* 💬 Comentarios */}
       <div className="comments-title" onClick={() => setShowComments(!showComments)}>
         Comentarios {showComments ? '▲' : '▼'}
       </div>
@@ -209,7 +240,6 @@ useEffect(() => {
         </div>
       )}
 
-      {/* 🎯 Recomendaciones */}
       <div className="recommendations-section">
         <h2>También te puede interesar</h2>
         <div className="grid">
