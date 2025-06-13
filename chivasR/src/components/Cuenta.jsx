@@ -7,7 +7,7 @@ const Cuenta = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('');
 
-  // ✅ Al montar, obtener datos del usuario desde backend (GET /user/)
+  // 🔄 Obtener datos del usuario desde el backend
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) return;
@@ -21,7 +21,6 @@ const Cuenta = () => {
       .then(res => res.json())
       .then(data => {
         setUser(data);
-        // Si decides guardar plan o tipo en backend, puedes tomarlo de data.plan o data.role
       })
       .catch(err => {
         console.error("❌ Error al obtener perfil de usuario:", err);
@@ -38,6 +37,10 @@ const Cuenta = () => {
     <div className="cuenta-grid">
       <div className="cuenta-left gratis">
         <h2>Mi Cuenta</h2>
+        <p><strong>Nombre:</strong> {user?.nombre || "Cargando..."}</p>
+        <p><strong>Género:</strong> {user?.genero || "Cargando..."}</p>
+        <p><strong>Fecha de nacimiento:</strong> {user?.fechaNacimiento || "Cargando..."}</p>
+        <p><strong>Domicilio:</strong> {user?.domicilio || "Cargando..."}</p>
         <p><strong>Correo:</strong> {user?.email || "Cargando..."}</p>
         <p><strong>Estado:</strong> Cuenta Gratuita</p>
         <p><strong>Plan:</strong> {plan}</p>

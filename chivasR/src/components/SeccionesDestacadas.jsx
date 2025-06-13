@@ -15,7 +15,7 @@ const SeccionesDestacadas = ({ filter }) => {
     "El Podcast De Las Chivas", "El Recuerdo"
   ];
 
-  // Cargar videos por categoría desde el backend o mock
+  // Cargar videos por categoría desde backend (o fallback con mock)
   useEffect(() => {
     setCategorias(predefined);
 
@@ -58,19 +58,32 @@ const SeccionesDestacadas = ({ filter }) => {
     });
   }, [filter]);
 
-  // Agrupa categorías en chunks de 5 para hacer secciones separadas
+  // Agrupa categorías en grupos de 5 para mostrar por fila
   const chunk = (arr, size) => {
     return arr.reduce((acc, _, i) => (
       i % size === 0 ? [...acc, arr.slice(i, i + size)] : acc
     ), []);
   };
 
-  const categoryGroups = chunk(predefined, 5);
+  const categoryGroups = chunk(predefined, 4);
 
   return (
     <div className="secciones-destacadas">
       {categoryGroups.map((group, groupIndex) => (
         <div key={groupIndex}>
+          {/* 🔷 Tarjetas por categoría tipo DAZN */}
+          <div className={`secciones-grid ${group.length <= 4 ? 'compact-grid' : ''}`}>
+            {group.map((cat, i) => (
+              <Link
+                key={i}
+                to={`/${cat.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '')}`}
+                className="seccion-card"
+              >
+                <div className="seccion-thumb">{cat}</div>
+              </Link>
+            ))}
+          </div>
+
           {/* 🔻 Videos filtrados desde backend o mock */}
           {group.flatMap(cat =>
             Array.isArray(categoryVideos[cat]) ? categoryVideos[cat] : []

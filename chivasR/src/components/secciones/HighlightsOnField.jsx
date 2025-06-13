@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
+import Footer from '../Footer'; // o la ruta correcta según tu estructura
 
 const HighlightsOnField = () => {
   const [videos, setVideos] = useState([]);
