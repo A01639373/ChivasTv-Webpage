@@ -92,13 +92,10 @@ const Header = ({ showSearch, setShowSearch }) => {
           Inicio
         </NavLink>
 
-<<<<<<< HEAD
-=======
         <NavLink to="/de-estreno" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
           De Estreno
         </NavLink>
 
->>>>>>> front_end_dev
         <div className="nav-item dropdown" onClick={() => setShowSections(!showSections)}>
           Secciones ▾
           {showSections && (

@@ -7,19 +7,6 @@ const RegisterForm = () => {
   const navigate = useNavigate();
 
   const valoresIniciales = {
-<<<<<<< HEAD
-    nombre:'',
-    apellido:'',
-    genero:'',
-    fechaNacimiento:'',
-    ocupacion:'',
-    email:'',
-    contraseña:'',
-    postal:'',
-    domicilio:'',
-    estado:'',
-    pais:''
-=======
     nombre: '',
     apellido: '',
     genero: '',
@@ -30,7 +17,6 @@ const RegisterForm = () => {
     domicilio: '',
     estado: '',
     pais: ''
->>>>>>> front_end_dev
   };
 
   const [formValues, setFormValues] = useState(valoresIniciales);
@@ -75,28 +61,6 @@ const RegisterForm = () => {
 
     if (!formValues.domicilio || formValues.domicilio.trim().length < 2)
       errors.domicilio = "Domicilio requerido";
-<<<<<<< HEAD
-    } else if(formValues.domicilio.trim().length < 2){
-      errors.domicilio = "Domicilio requerido";
-    }
-    
-    if (!formValues.genero) {
-      errors.genero = 'Selecciona tu género';
-    }else if(formValues.genero ==''){
-      errors.genero = 'Selecciona tu género';
-    }
-
-    if (!formValues.fechaNacimiento) {
-      errors.fechaNacimiento = 'Inserta tu fecha de nacimiento';
-    }
-    
-    if (!formValues.ocupacion) {
-      errors.ocupacion = 'Selecciona tu ocupación';
-    }else if(formValues.ocupacion ==''){
-      errors.ocupacion = 'Selecciona tu ocupación';
-    }
-=======
->>>>>>> front_end_dev
 
     if (!formValues.genero)
       errors.genero = "Selecciona tu género";
@@ -193,20 +157,6 @@ const RegisterForm = () => {
           </select>
           <p>{formErrors.ocupacion}</p>
 
-<<<<<<< HEAD
-          <label htmlFor='fechaNacimiento'>Fecha de nacimiento</label>
-          <input
-            type="date"
-            name="fechaNacimiento"
-            value={formValues.fechaNacimiento}
-            placeholder="Ingrese fecha de nacimiento"
-            onChange={handleChange}
-          />
-          <p>{formErrors.fechaNacimiento}</p>
-       
-          
-=======
->>>>>>> front_end_dev
           <label htmlFor='email'>Correo*</label>
           <input type='email' name='email' id='email' value={formValues.email} onChange={handleChange} />
           <p>{formErrors.email}</p>
