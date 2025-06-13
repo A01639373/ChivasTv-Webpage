@@ -220,7 +220,7 @@ const VideoDetail = () => {
           {recommendations.map((item) => (
             <Link to={`/video/${item.id}`} key={item.id} className="card">
               <div className="image-placeholder">
-                <img src={item.image} alt={item.title} />
+                <img src={item.image}  />
                 <p className="card-date">{item.duration}</p>
               </div>
               <h3 className="card-title">{item.title}</h3>
