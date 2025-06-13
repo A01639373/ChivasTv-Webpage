@@ -10,7 +10,6 @@ const VideoDetail = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
-  // 🔁 Cargar video desde backend
   useEffect(() => {
     const token = localStorage.getItem("token");
 
@@ -47,7 +46,6 @@ const VideoDetail = () => {
       });
   }, [id]);
 
-  // 🔁 Recomendaciones por categoría
   useEffect(() => {
     if (!video?.category) return;
 
@@ -80,7 +78,6 @@ const VideoDetail = () => {
       });
   }, [video?.category]);
 
-  // 🔁 Comentarios
   useEffect(() => {
     if (!video?.id) return;
     fetch(`${import.meta.env.VITE_BACKEND_API_URL}/comment/${video.id}/0/10?id=mock-user`, {
@@ -108,7 +105,6 @@ const VideoDetail = () => {
       });
   }, [video?.id]);
 
-  // ➕ Publicar comentario
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     if (!newComment.trim()) return;
@@ -147,7 +143,6 @@ const VideoDetail = () => {
 
   return (
     <div className="video-detail">
-      {/* 🎥 Player */}
       <div className="video-player">
         {(video?.url?.includes("youtube.com") || video?.url?.includes("youtu.be")) ? (
           <iframe
@@ -155,7 +150,6 @@ const VideoDetail = () => {
             height="480"
             src={video.url.replace("watch?v=", "embed/").replace("youtu.be/", "youtube.com/embed/")}
             title={video.title}
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
@@ -167,7 +161,6 @@ const VideoDetail = () => {
         )}
       </div>
 
-      {/* 📝 Header */}
       <div className="video-header">
         <div>
           <h1>{video.title}</h1>
@@ -181,12 +174,10 @@ const VideoDetail = () => {
         )}
       </div>
 
-      {/* 🧾 Descripción */}
       <div className="video-description">
         {video.description || "Este video aún no tiene descripción"}
       </div>
 
-      {/* 💬 Comentarios */}
       <div className="comments-title" onClick={() => setShowComments(!showComments)}>
         Comentarios {showComments ? '▲' : '▼'}
       </div>
@@ -213,7 +204,6 @@ const VideoDetail = () => {
         </div>
       )}
 
-      {/* 🎯 Recomendaciones */}
       <div className="recommendations-section">
         <h2>También te puede interesar</h2>
         <div className="grid">

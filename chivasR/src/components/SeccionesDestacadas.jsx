@@ -58,7 +58,7 @@ const SeccionesDestacadas = ({ filter }) => {
     });
   }, [filter]);
 
-  // Agrupa categorías en grupos de 5 para mostrar por fila
+  // Agrupa categorías en grupos de 4 para mostrar por fila
   const chunk = (arr, size) => {
     return arr.reduce((acc, _, i) => (
       i % size === 0 ? [...acc, arr.slice(i, i + size)] : acc
@@ -67,12 +67,39 @@ const SeccionesDestacadas = ({ filter }) => {
 
   const categoryGroups = chunk(predefined, 4);
 
+  // Obtener todos los videos filtrados
+  const allVideos = Object.values(categoryVideos)
+    .flat()
+    .filter(video => filter === "todos" || video.type === filter)
+    .slice(0, 8); // Limitar a 8 videos destacados
+
   return (
     <div className="secciones-destacadas">
-      {categoryGroups.map((group, groupIndex) => (
-        <div key={groupIndex}>
-          {/* 🔷 Tarjetas por categoría tipo DAZN */}
-          <div className={`secciones-grid ${group.length <= 4 ? 'compact-grid' : ''}`}>
+      {allVideos.length > 0 && (
+        <>
+          <h3 classname='titulo-Seccion'>DESTACADOS</h3>
+          <section className="seccion">
+            <div className="grid">
+              {allVideos.map((video) => (
+                <Link to={`/video/${video.id}`} key={video.id} className="card">
+                  <div
+                    className="image-placeholder"
+                    style={{ backgroundImage: video.image ? `url(${video.image})` : 'none' }}
+                  >
+                    <span className="card-date">{video.duration}</span>
+                  </div>
+                  <h3 className="card-title">{video.title}</h3>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+
+      <h3 classname='titulo-Seccion'>CATEGORÍAS</h3>
+      <div className="categorias-container">
+        {categoryGroups.map((group, groupIndex) => (
+          <div key={groupIndex} className="secciones-grid">
             {group.map((cat, i) => (
               <Link
                 key={i}
@@ -83,36 +110,8 @@ const SeccionesDestacadas = ({ filter }) => {
               </Link>
             ))}
           </div>
-
-          {/* 🔻 Videos filtrados desde backend o mock */}
-          {group.flatMap(cat =>
-            Array.isArray(categoryVideos[cat]) ? categoryVideos[cat] : []
-          ).filter(v => filter === "todos" || v.type === filter)
-          .slice(0, 8).length > 0 && (
-            <section className="seccion">
-              <div className="grid">
-                {group.flatMap(cat =>
-                  (categoryVideos[cat] || [])
-                    .filter(v => filter === "todos" || v.type === filter)
-                    .slice(0, 4)
-                )
-                .slice(0, 8)
-                .map((video) => (
-                  <Link to={`/video/${video.id}`} key={video.id} className="card">
-                    <div
-                      className="image-placeholder"
-                      style={{ backgroundImage: video.image ? `url(${video.image})` : 'none' }}
-                    >
-                      <span className="card-date">{video.duration}</span>
-                    </div>
-                    <h3 className="card-title">{video.title}</h3>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
