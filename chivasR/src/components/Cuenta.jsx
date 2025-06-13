@@ -2,19 +2,31 @@ import React, { useEffect, useState } from 'react';
 import '../styles/Cuenta.css';
 
 const Cuenta = () => {
-  const [userEmail, setUserEmail] = useState('');
-  const [isPremium, setIsPremium] = useState(false);
-  const [plan, setPlan] = useState('');
+  const [user, setUser] = useState(null);
+  const [plan, setPlan] = useState('Ninguno');
   const [showModal, setShowModal] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('');
 
+  // ✅ Al montar, obtener datos del usuario desde backend (GET /user/)
   useEffect(() => {
-    const email = localStorage.getItem('user');
-    const premiumStatus = localStorage.getItem('premium') === 'true';
-    const userPlan = localStorage.getItem('plan') || 'Ninguno';
-    setUserEmail(email);
-    setIsPremium(premiumStatus);
-    setPlan(userPlan);
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/user/`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        setUser(data);
+        // Si decides guardar plan o tipo en backend, puedes tomarlo de data.plan o data.role
+      })
+      .catch(err => {
+        console.error("❌ Error al obtener perfil de usuario:", err);
+        setUser({ email: localStorage.getItem("user") || "mock@email.com" });
+      });
   }, []);
 
   const handleSelectPlan = (name) => {
@@ -26,7 +38,7 @@ const Cuenta = () => {
     <div className="cuenta-grid">
       <div className="cuenta-left gratis">
         <h2>Mi Cuenta</h2>
-        <p><strong>Correo:</strong> {userEmail}</p>
+        <p><strong>Correo:</strong> {user?.email || "Cargando..."}</p>
         <p><strong>Estado:</strong> Cuenta Gratuita</p>
         <p><strong>Plan:</strong> {plan}</p>
       </div>

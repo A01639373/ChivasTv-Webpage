@@ -1,16 +1,30 @@
 // components/secciones/Leyendas.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
-import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import mockVideos from '../../data/videos_chivastv.json';
 
 const Leyendas = () => {
-  const sectionVideos = videoData.filter(video => video.category === "Leyendas");
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Leyendas`)
+      .then(res => {
+        if (!res.ok) throw new Error("Error en la API");
+        return res.json();
+      })
+      .then(data => {
+        setVideos(data);
+      })
+      .catch(() => {
+        const fallback = mockVideos.filter(v => v.category === "Leyendas");
+        setVideos(fallback);
+      });
+  }, []);
 
   return (
     <>
-      {/* Hero estilo DAZN */}
+      {/* Hero visual tipo DAZN */}
       <section className="hero-femenil">
         <div className="hero-overlay">
           <div className="hero-text">
@@ -20,11 +34,11 @@ const Leyendas = () => {
         </div>
       </section>
 
-      {/* Grid de videos */}
+      {/* Cuadrícula de videos */}
       <section className="seccion">
         <div className="grid">
-          {sectionVideos.map((video) => (
-             <Link to={`/video/${video.id}`} key={video.id} className="card">
+          {videos.map((video) => (
+            <Link to={`/video/${video.id}`} key={video.id} className="card">
               <div
                 className="image-placeholder"
                 style={{ backgroundImage: `url(${video.image || '/img/default-thumbnail.jpg'})` }}

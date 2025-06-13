@@ -1,12 +1,24 @@
 // components/secciones/Subs.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
-import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import mockVideos from '../../data/videos_chivastv.json';
 
 const Subs = () => {
-  const sectionVideos = videoData.filter(video => video.category === "Sub's");
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Sub%27s`) // Sub's => Sub%27s
+      .then(res => {
+        if (!res.ok) throw new Error("Error en el backend");
+        return res.json();
+      })
+      .then(data => setVideos(data))
+      .catch(() => {
+        const fallback = mockVideos.filter(v => v.category === "Sub's");
+        setVideos(fallback);
+      });
+  }, []);
 
   return (
     <>
@@ -23,8 +35,8 @@ const Subs = () => {
       {/* Grid de videos */}
       <section className="seccion">
         <div className="grid">
-          {sectionVideos.map((video) => (
-             <Link to={`/video/${video.id}`} key={video.id} className="card">
+          {videos.map((video) => (
+            <Link to={`/video/${video.id}`} key={video.id} className="card">
               <div
                 className="image-placeholder"
                 style={{ backgroundImage: `url(${video.image || '/img/default-thumbnail.jpg'})` }}

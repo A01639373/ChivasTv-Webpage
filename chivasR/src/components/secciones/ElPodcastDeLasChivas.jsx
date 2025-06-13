@@ -1,16 +1,30 @@
 // components/secciones/ElPodcastDeLasChivas.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
-import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
-
+import mockVideos from '../../data/videos_chivastv.json';
 
 const ElPodcastDeLasChivas = () => {
-  const sectionVideos = videoData.filter(video => video.category === "El Podcast De Las Chivas");
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/El Podcast De Las Chivas`)
+      .then(res => {
+        if (!res.ok) throw new Error("Error en la API");
+        return res.json();
+      })
+      .then(data => {
+        setVideos(data);
+      })
+      .catch(() => {
+        const fallback = mockVideos.filter(v => v.category === "El Podcast De Las Chivas");
+        setVideos(fallback);
+      });
+  }, []);
 
   return (
     <>
-      {/* Hero estilo DAZN */}
+      {/* Hero superior estilo DAZN */}
       <section className="hero-femenil">
         <div className="hero-overlay">
           <div className="hero-text">
@@ -20,10 +34,10 @@ const ElPodcastDeLasChivas = () => {
         </div>
       </section>
 
-      {/* Grid de videos */}
+      {/* Grid visual de tarjetas de video */}
       <section className="seccion">
         <div className="grid">
-          {sectionVideos.map((video) => (
+          {videos.map((video) => (
             <Link to={`/video/${video.id}`} key={video.id} className="card">
               <div
                 className="image-placeholder"

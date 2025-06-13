@@ -1,11 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import videos from '../data/videos_chivastv.json';
-import '../styles/SeccionesDestacadas.css';
-
-const categorias = [...new Set(videos.map(v => v.category))];
+import "../styles/SeccionesDestacadas.css";
 
 const SeccionesDestacadas = ({ filter }) => {
+  const [categoryVideos, setCategoryVideos] = useState({});
+  const [categorias, setCategorias] = useState([]);
+
+  const predefined = [
+    "Clásico De México", "Santuario Rojiblanco", "Raíces",
+    "Detrás Del Rebaño", "Resumen", "Repeticiones", "Resiliencia", "Chivas Femenil",
+    "Chivas Varonil", "Sub's", "Entrevistas", "Día A Día Rojiblanco", "Highlights On Field",
+    "Leyendas", "Historia Sagrada", "Nación Chivas", "Operación Valorant", "Esports",
+    "El Podcast De Las Chivas", "El Recuerdo"
+  ];
+
+  useEffect(() => {
+    setCategorias(predefined);
+
+    predefined.forEach(cat => {
+      fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/${cat}?name=${cat}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
+      })
+        .then(res => res.json())
+        .then(data => {
+          setCategoryVideos(prev => ({ ...prev, [cat]: data }));
+        })
+        .catch(() => {
+          const mockVideos = [
+            {
+              id: Math.floor(Math.random() * 1000),
+              title: `${cat} Video 1`,
+              category: cat,
+              type: "suscriptor",
+              date: "10/10/2010",
+              duration: "10:03",
+              description: "Mock: video exclusivo",
+              partido: true
+            },
+            {
+              id: Math.floor(Math.random() * 1000),
+              title: `${cat} Video 2`,
+              category: cat,
+              type: "gratis",
+              date: "10/10/2010",
+              duration: "9:45",
+              description: "Mock: video gratuito",
+              partido: false
+            }
+          ].filter(v => filter === "todos" || v.type === filter);
+
+          setCategoryVideos(prev => ({ ...prev, [cat]: mockVideos }));
+        });
+    });
+  }, [filter]);
+
   const chunk = (arr, size) => {
     return arr.reduce((acc, _, i) => (
       i % size === 0 ? [...acc, arr.slice(i, i + size)] : acc
@@ -31,14 +81,14 @@ const SeccionesDestacadas = ({ filter }) => {
             ))}
           </div>
 
-          {/* 🔻 Videos filtrados */}
+          {/* 🔻 Videos filtrados desde backend o mock */}
           {group.flatMap(cat =>
-            videos.filter(v => v.category === cat && (filter === "todos" || v.type === filter)).slice(0, 4)
+            Array.isArray(categoryVideos[cat]) ? categoryVideos[cat] : [].filter(v => filter === "todos" || v.type === filter).slice(0, 4)
           ).slice(0, 8).length > 0 && (
             <section className="seccion">
               <div className="grid">
                 {group.flatMap(cat =>
-                  videos.filter(v => v.category === cat && (filter === "todos" || v.type === filter)).slice(0, 4)
+                  (categoryVideos[cat] || []).filter(v => filter === "todos" || v.type === filter).slice(0, 4)
                 ).slice(0, 8).map((video) => (
                   <Link to={`/video/${video.id}`} key={video.id} className="card">
                     <div

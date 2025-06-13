@@ -2,17 +2,16 @@
 import React, { useState } from 'react'; 
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import videos from './data/videos_chivastv.json'; 
+import videos from './src/data/videos_chivastv.json'; 
 
 
-import App from './App.jsx';
-import Header from './components/Header.jsx';
-import LoginForm from './components/LoginForm.jsx';
-import RegisterForm from './components/RegisterForm.jsx';
-import VideoDetail from './components/VideoDetail.jsx';
-import Cuenta from './components/Cuenta.jsx';
-import LiveTv from './components/LiveTV.jsx';
-import Estrenos from './components/Estrenos.jsx';
+import App from './src/App.jsx';
+import Header from './src/components/Header.jsx';
+import LoginForm from './src/components/LoginForm.jsx';
+import RegisterForm from './src/components/RegisterForm.jsx';
+import VideoDetail from './src/components/VideoDetail.jsx';
+import Cuenta from './src/components/Cuenta.jsx';
+import LiveTv from './src/components/LiveTV.jsx';
 
 import './index.css';
 
@@ -37,8 +36,8 @@ import {
   Resumen,
   SantuarioRojiblanco,
   Subs
-} from './components/secciones';
-import LiveTV from './components/LiveTV.jsx';
+} from './src/components/secciones/index.js';
+import LiveTV from './src/components/LiveTV.jsx';
 
 const Root = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -73,7 +72,6 @@ const Root = () => {
         <Route path="/video/:id" element={<VideoDetail />} />
         <Route path="/cuenta" element={<Cuenta />} />
         <Route path="/LiveTV" element={<LiveTV />} />
-        <Route path="/de-estreno" element={<Estrenos videos={videos} />} />
 
       </Routes>
     </BrowserRouter>
