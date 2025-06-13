@@ -12,16 +12,20 @@ const VideoDetail = () => {
 
   // 🔁 Cargar video desde backend
   useEffect(() => {
+    const token = localStorage.getItem("token");
+
     fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/${id}`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`
-      }
+      headers: token ? { Authorization: `Bearer ${token}` } : {}
     })
       .then((res) => {
         if (res.status === 403) throw new Error("Contenido exclusivo para suscriptores");
         return res.json();
       })
-      .then((data) => setVideo(data))
+      .then((data) => {
+        console.log("📦 Video cargado:", data);
+        const oneVideo = Array.isArray(data) ? data[0] : data;
+        setVideo(oneVideo);
+      })
       .catch((err) => {
         console.error("Error al cargar el video:", err);
         if (err.message.includes("exclusivo")) {
@@ -46,7 +50,10 @@ const VideoDetail = () => {
   // 🔁 Recomendaciones por categoría
   useEffect(() => {
     if (!video?.category) return;
-    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/${video.category}?name=${video.category}`, {
+
+    const category = typeof video.category === 'object' ? video.category.name : video.category;
+
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/${category}?name=${category}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }
@@ -128,7 +135,6 @@ const VideoDetail = () => {
 
   if (!video) return <div className="video-detail">Cargando video...</div>;
 
-  // 🔒 Contenido bloqueado
   if (video?.locked) {
     return (
       <div className="video-detail locked">
@@ -143,7 +149,7 @@ const VideoDetail = () => {
     <div className="video-detail">
       {/* 🎥 Player */}
       <div className="video-player">
-        {video.url.includes("youtube.com") || video.url.includes("youtu.be") ? (
+        {(video?.url?.includes("youtube.com") || video?.url?.includes("youtu.be")) ? (
           <iframe
             width="100%"
             height="480"
@@ -189,7 +195,7 @@ const VideoDetail = () => {
         <div className="comments-section">
           {comments.map((comment) => (
             <div className="comment" key={comment.id}>
-              <div className="comment-author">👤 {comment.user}</div>
+              <div className="comment-author">{comment.user}</div>
               <div className="comment-text">{comment.content}</div>
               <div className="comment-date">{new Date(comment.timestamp).toLocaleString()}</div>
             </div>
@@ -214,7 +220,7 @@ const VideoDetail = () => {
           {recommendations.map((item) => (
             <Link to={`/video/${item.id}`} key={item.id} className="card">
               <div className="image-placeholder">
-                <img src={item.image} />
+                <img src={item.image} alt={item.title} />
                 <p className="card-date">{item.duration}</p>
               </div>
               <h3 className="card-title">{item.title}</h3>
@@ -227,3 +233,4 @@ const VideoDetail = () => {
 };
 
 export default VideoDetail;
+
