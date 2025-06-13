@@ -2,12 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-import historia from '../../assets/img_seccion/historiaSagrada.png'
-import Footer from "../Footer";
-=======
 import mockVideos from '../../data/videos_chivastv.json';
->>>>>>> front_end_dev
 
 const HistoriaSagrada = () => {
   const [videos, setVideos] = useState([]);
@@ -29,12 +24,8 @@ const HistoriaSagrada = () => {
 
   return (
     <>
-<<<<<<< HEAD
-      <section className="hero-femenil" style={{ backgroundImage: `url(${historia})` }}>
-=======
       {/* Hero visual estilo DAZN */}
       <section className="hero-femenil">
->>>>>>> front_end_dev
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Historia Sagrada</h1>

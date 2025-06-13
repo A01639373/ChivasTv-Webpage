@@ -2,12 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-import nacionChivas from '../../assets/img_seccion/nacionChivas.png'
-import Footer from "../Footer";
-=======
 import mockVideos from '../../data/videos_chivastv.json';
->>>>>>> front_end_dev
 
 const NaciónChivas = () => {
   const [videos, setVideos] = useState([]);
@@ -27,12 +22,8 @@ const NaciónChivas = () => {
 
   return (
     <>
-<<<<<<< HEAD
-      <section className="hero-femenil" style={{ backgroundImage: `url(${nacionChivas})` }}>
-=======
       {/* Hero visual estilo DAZN */}
       <section className="hero-femenil">
->>>>>>> front_end_dev
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Nacion Chivas</h1>

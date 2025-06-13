@@ -2,12 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-import ddr from '../../assets/img_seccion/DDR.png'
-import Footer from "../Footer";
-=======
 import mockVideos from '../../data/videos_chivastv.json';
->>>>>>> front_end_dev
 
 const DetrásDelRebaño = () => {
   const [videos, setVideos] = useState([]);
@@ -31,12 +26,8 @@ const DetrásDelRebaño = () => {
 
   return (
     <>
-<<<<<<< HEAD
-      <section className="hero-femenil" style={{ backgroundImage: `url(${ddr})` }}>
-=======
       {/* Hero superior estilo DAZN */}
       <section className="hero-femenil">
->>>>>>> front_end_dev
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Detras del Rebaño</h1>

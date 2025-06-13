@@ -2,12 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-import sub from '../../assets/img_seccion/subChivas.png'
-import Footer from "../Footer";
-=======
 import mockVideos from '../../data/videos_chivastv.json';
->>>>>>> front_end_dev
 
 const Subs = () => {
   const [videos, setVideos] = useState([]);
