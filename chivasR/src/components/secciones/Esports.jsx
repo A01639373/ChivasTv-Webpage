@@ -1,17 +1,40 @@
 // components/secciones/Esports.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
-import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import esport from '../../assets/img_seccion/esports.png'
 import Footer from "../Footer";
+=======
+import mockVideos from '../../data/videos_chivastv.json';
+>>>>>>> front_end_dev
 
 const Esports = () => {
-  const sectionVideos = videoData.filter(video => video.category === "Esports");
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Esports`)
+      .then(res => {
+        if (!res.ok) throw new Error("Error en la API");
+        return res.json();
+      })
+      .then(data => {
+        setVideos(data);
+      })
+      .catch(() => {
+        const fallback = mockVideos.filter(v => v.category === "Esports");
+        setVideos(fallback);
+      });
+  }, []);
 
   return (
     <>
+<<<<<<< HEAD
       <section className="hero-femenil" style={{ backgroundImage: `url(${esport})` }}>
+=======
+      {/* Hero superior con branding de sección */}
+      <section className="hero-femenil">
+>>>>>>> front_end_dev
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Chivas Esports</h1>
@@ -20,11 +43,11 @@ const Esports = () => {
         </div>
       </section>
 
-      {/* Grid de videos */}
+      {/* Cuadrícula de videos */}
       <section className="seccion">
         <div className="grid">
-          {sectionVideos.map((video) => (
-             <Link to={`/video/${video.id}`} key={video.id} className="card">
+          {videos.map((video) => (
+            <Link to={`/video/${video.id}`} key={video.id} className="card">
               <div
                 className="image-placeholder"
                 style={{ backgroundImage: `url(${video.image || '/img/default-thumbnail.jpg'})` }}

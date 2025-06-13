@@ -20,7 +20,25 @@ const Header = ({ showSearch, setShowSearch }) => {
     const token = localStorage.getItem('token');
     const userEmail = localStorage.getItem('user');
     setIsLoggedIn(!!token);
-    setUser(userEmail);
+    setUser(userEmail); // fallback por si no carga el perfil
+
+    if (token) {
+      fetch(`${import.meta.env.VITE_BACKEND_API_URL}/user/`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log("👤 Perfil del usuario:", data);
+          if (data.name) setUser(data.name);
+        })
+        .catch(err => {
+          console.error("Error al obtener perfil:", err);
+        });
+    }
   }, [location]);
 
   const handleLogout = () => {
@@ -70,13 +88,17 @@ const Header = ({ showSearch, setShowSearch }) => {
       </div>
 
       <nav className="nav-menu">
-        <NavLink
-          to="/"
-          className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
-        >
+        <NavLink to="/" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
           Inicio
         </NavLink>
 
+<<<<<<< HEAD
+=======
+        <NavLink to="/de-estreno" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+          De Estreno
+        </NavLink>
+
+>>>>>>> front_end_dev
         <div className="nav-item dropdown" onClick={() => setShowSections(!showSections)}>
           Secciones ▾
           {showSections && (
@@ -95,10 +117,7 @@ const Header = ({ showSearch, setShowSearch }) => {
           )}
         </div>
 
-        <NavLink
-          to="/liveTV"
-          className={({ isActive }) => `nav-item live ${isActive ? 'active' : ''}`}
-        >
+        <NavLink to="/liveTV" className={({ isActive }) => `nav-item live ${isActive ? 'active' : ''}`}>
           Live TV
         </NavLink>
 
@@ -110,7 +129,7 @@ const Header = ({ showSearch, setShowSearch }) => {
       <div className="header-right">
         {isLoggedIn && user && (
           <span className="btn-account">
-            Hola, {user.split('@')[0]}
+            Hola, {user}
           </span>
         )}
 

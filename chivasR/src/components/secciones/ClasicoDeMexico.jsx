@@ -1,17 +1,42 @@
 // components/secciones/ClásicoDeMéxico.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
-import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import clasicos from '../../assets/img_seccion/clasico.png'
 import Footer from "../Footer";
+=======
+import mockVideos from '../../data/videos_chivastv.json';
+>>>>>>> front_end_dev
 
 const ClásicoDeMéxico = () => {
-  const sectionVideos = videoData.filter(video => video.category === "Clásico De México");
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    // Llamar a la API para obtener videos de la categoría "Clásico De México"
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Clásico De México`)
+      .then(res => {
+        if (!res.ok) throw new Error("Error en la API");
+        return res.json();
+      })
+      .then(data => {
+        setVideos(data); // ✅ Usa videos reales del backend
+      })
+      .catch(() => {
+        // 🔁 Fallback si el backend falla
+        const fallback = mockVideos.filter(v => v.category === "Clásico De México");
+        setVideos(fallback);
+      });
+  }, []);
 
   return (
     <>
+<<<<<<< HEAD
       <section className="hero-femenil" style={{ backgroundImage: `url(${clasicos})` }}>
+=======
+      {/* 🟥 Hero principal estilo DAZN */}
+      <section className="hero-femenil">
+>>>>>>> front_end_dev
         <div className="hero-overlay">
           <div className="hero-text">
             <h1>Clasico de Mexico</h1>
@@ -20,11 +45,11 @@ const ClásicoDeMéxico = () => {
         </div>
       </section>
 
-      {/* Grid de videos */}
+      {/* 🎬 Grid de tarjetas de video */}
       <section className="seccion">
         <div className="grid">
-          {sectionVideos.map((video) => (
-             <Link to={`/video/${video.id}`} key={video.id} className="card">
+          {videos.map((video) => (
+            <Link to={`/video/${video.id}`} key={video.id} className="card">
               <div
                 className="image-placeholder"
                 style={{ backgroundImage: `url(${video.image || '/img/default-thumbnail.jpg'})` }}

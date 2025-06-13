@@ -1,13 +1,29 @@
 // components/secciones/SantuarioRojiblanco.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
-import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import santuario from '../../assets/img_seccion/Santuario.png'
 import Footer from "../Footer";
+=======
+import mockVideos from '../../data/videos_chivastv.json';
+>>>>>>> front_end_dev
 
 const SantuarioRojiblanco = () => {
-  const sectionVideos = videoData.filter(video => video.category === "Santuario Rojiblanco");
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Santuario%20Rojiblanco`)
+      .then(res => {
+        if (!res.ok) throw new Error("Error en la API");
+        return res.json();
+      })
+      .then(data => setVideos(data))
+      .catch(() => {
+        const fallback = mockVideos.filter(v => v.category === "Santuario Rojiblanco");
+        setVideos(fallback);
+      });
+  }, []);
 
   return (
     <>
@@ -23,8 +39,8 @@ const SantuarioRojiblanco = () => {
       {/* Grid de videos */}
       <section className="seccion">
         <div className="grid">
-          {sectionVideos.map((video) => (
-             <Link to={`/video/${video.id}`} key={video.id} className="card">
+          {videos.map((video) => (
+            <Link to={`/video/${video.id}`} key={video.id} className="card">
               <div
                 className="image-placeholder"
                 style={{ backgroundImage: `url(${video.image || '/img/default-thumbnail.jpg'})` }}

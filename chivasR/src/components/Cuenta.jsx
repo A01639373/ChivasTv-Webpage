@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/Cuenta.css';
 
 const Cuenta = () => {
+<<<<<<< HEAD
   const [userEmail, setUserEmail] = useState('');
   const [userNombre, setUserNombre] = useState('');
   const [userGenero, setUserGenero] = useState('');
@@ -9,10 +10,16 @@ const Cuenta = () => {
   const [userDomicilio, setUserDomicilio] = useState('');
   const [isPremium, setIsPremium] = useState(false);
   const [plan, setPlan] = useState('');
+=======
+  const [user, setUser] = useState(null);
+  const [plan, setPlan] = useState('Ninguno');
+>>>>>>> front_end_dev
   const [showModal, setShowModal] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('');
 
+  // ✅ Al montar, obtener datos del usuario desde backend (GET /user/)
   useEffect(() => {
+<<<<<<< HEAD
     // Asumiendo que tienes diferentes keys en localStorage para cada campo
     const email = localStorage.getItem('userEmail') || localStorage.getItem('user') || '';
     const nombre = localStorage.getItem('userNombre') || '';
@@ -29,6 +36,26 @@ const Cuenta = () => {
     setUserDomicilio(domicilio);
     setIsPremium(premiumStatus);
     setPlan(userPlan);
+=======
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/user/`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        setUser(data);
+        // Si decides guardar plan o tipo en backend, puedes tomarlo de data.plan o data.role
+      })
+      .catch(err => {
+        console.error("❌ Error al obtener perfil de usuario:", err);
+        setUser({ email: localStorage.getItem("user") || "mock@email.com" });
+      });
+>>>>>>> front_end_dev
   }, []);
 
   const handleSelectPlan = (name) => {
@@ -40,11 +67,15 @@ const Cuenta = () => {
     <div className="cuenta-grid">
       <div className="cuenta-left gratis">
         <h2>Mi Cuenta</h2>
+<<<<<<< HEAD
         <p><strong>Nombre:</strong> {userNombre}</p>
         <p><strong>Género:</strong> {userGenero}</p>
         <p><strong>Fecha de nacimiento:</strong> {userFecha}</p>
         <p><strong>Domicilio:</strong> {userDomicilio}</p>
         <p><strong>Correo:</strong> {userEmail}</p>
+=======
+        <p><strong>Correo:</strong> {user?.email || "Cargando..."}</p>
+>>>>>>> front_end_dev
         <p><strong>Estado:</strong> Cuenta Gratuita</p>
         <p><strong>Plan:</strong> {plan}</p>
       </div>

@@ -1,13 +1,29 @@
 // components/secciones/Resumen.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
-import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import resumenes from '../../assets/img_seccion/Resumen.png'
 import Footer from "../Footer";
+=======
+import mockVideos from '../../data/videos_chivastv.json';
+>>>>>>> front_end_dev
 
 const Resumen = () => {
-  const sectionVideos = videoData.filter(video => video.category === "Resumen");
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Resumen`)
+      .then(res => {
+        if (!res.ok) throw new Error("Error en el backend");
+        return res.json();
+      })
+      .then(data => setVideos(data))
+      .catch(() => {
+        const fallback = mockVideos.filter(v => v.category === "Resumen");
+        setVideos(fallback);
+      });
+  }, []);
 
   return (
     <>
@@ -23,8 +39,8 @@ const Resumen = () => {
       {/* Grid de videos */}
       <section className="seccion">
         <div className="grid">
-          {sectionVideos.map((video) => (
-             <Link to={`/video/${video.id}`} key={video.id} className="card">
+          {videos.map((video) => (
+            <Link to={`/video/${video.id}`} key={video.id} className="card">
               <div
                 className="image-placeholder"
                 style={{ backgroundImage: `url(${video.image || '/img/default-thumbnail.jpg'})` }}
@@ -42,3 +58,4 @@ const Resumen = () => {
 };
 
 export default Resumen;
+

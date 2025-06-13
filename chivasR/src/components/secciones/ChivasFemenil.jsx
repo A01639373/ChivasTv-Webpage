@@ -1,13 +1,32 @@
 // components/secciones/ChivasFemenil.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
-import videoData from '../../data/videos_chivastv.json';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import chivasFem from '../../assets/Chivas_fem.png'
 import Footer from "../Footer";
+=======
+import mockVideos from '../../data/videos_chivastv.json';
+>>>>>>> front_end_dev
 
 const ChivasFemenil = () => {
-  const sectionVideos = videoData.filter(video => video.category === "Chivas Femenil");
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/video/Chivas Femenil`)
+      .then(res => {
+        if (!res.ok) throw new Error("Backend no disponible");
+        return res.json();
+      })
+      .then(data => {
+        setVideos(data);
+      })
+      .catch(() => {
+        // fallback al JSON local si el backend no está listo
+        const fallback = mockVideos.filter(video => video.category === "Chivas Femenil");
+        setVideos(fallback);
+      });
+  }, []);
 
   return (
     <>
@@ -23,17 +42,17 @@ const ChivasFemenil = () => {
       {/* Grid de videos */}
       <section className="seccion">
         <div className="grid">
-         {sectionVideos.map((video) => (
-              <Link to={`/video/${video.id}`} key={video.id} className="card">
-                <div
-                  className="image-placeholder"
-                  style={{ backgroundImage: `url(${video.image || '/img/default-thumbnail.jpg'})` }}
-                >
-                  <p className="card-date">{video.duration}</p>
-                </div>
-                <h3 className="card-title">{video.title}</h3>
-              </Link>
-            ))}
+          {videos.map((video) => (
+            <Link to={`/video/${video.id}`} key={video.id} className="card">
+              <div
+                className="image-placeholder"
+                style={{ backgroundImage: `url(${video.image || '/img/default-thumbnail.jpg'})` }}
+              >
+                <p className="card-date">{video.duration}</p>
+              </div>
+              <h3 className="card-title">{video.title}</h3>
+            </Link>
+          ))}
         </div>
       </section>
       <Footer />
