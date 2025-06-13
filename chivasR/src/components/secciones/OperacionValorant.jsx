@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import Footer from '../Footer'; // o la ruta correcta según tu estructura
-
+import valorant from '../../assets/img_seccion/operacionValorant.png'
+import Footer from "../Footer";
 
 const OperaciónValorant = () => {
   const [videos, setVideos] = useState([]);
@@ -24,15 +24,14 @@ const OperaciónValorant = () => {
 
   return (
     <>
-      {/* Hero visual tipo DAZN */}
-      <section className="hero-femenil">
-        <div className="hero-overlay">
-          <div className="hero-text">
-            <h1>Operacion Valorant</h1>
-            <p>Disfruta del contenido más exclusivo de Operación Valorant</p>
-          </div>
+    <section className="hero-femenil" style={{ backgroundImage: `url(${valorant})` }}>
+      <div className="hero-overlay">
+        <div className="hero-text">
+          <h1>Operacion Valorant</h1>
+          <p>Disfruta del contenido más exclusivo de la Operacion Valorant</p>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Cuadrícula de videos */}
       <section className="seccion">

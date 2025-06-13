@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import Footer from '../Footer'; // o la ruta correcta según tu estructura
-
+import ddr from '../../assets/img_seccion/DDR.png'
+import Footer from "../Footer";
 
 const DetrásDelRebaño = () => {
   const [videos, setVideos] = useState([]);
@@ -28,15 +28,14 @@ const DetrásDelRebaño = () => {
 
   return (
     <>
-      {/* Hero superior estilo DAZN */}
-      <section className="hero-femenil">
-        <div className="hero-overlay">
-          <div className="hero-text">
-            <h1>Detras del Rebaño</h1>
-            <p>Disfruta del contenido más exclusivo de chivas detras del rebaño.</p>
-          </div>
+    <section className="hero-femenil" style={{ backgroundImage: `url(${ddr})` }}>
+      <div className="hero-overlay">
+        <div className="hero-text">
+          <h1>Detras del Rebaño</h1>
+          <p>Disfruta del contenido más exclusivo de detras del Rebaño</p>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Grid visual de tarjetas de video */}
       <section className="seccion">

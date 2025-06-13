@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import Footer from '../Footer'; // o la ruta correcta según tu estructura
+import highlights from '../../assets/img_seccion/highlights.png'
+import Footer from "../Footer";
 
 const HighlightsOnField = () => {
   const [videos, setVideos] = useState([]);
@@ -25,15 +26,14 @@ const HighlightsOnField = () => {
 
   return (
     <>
-      {/* Hero visual con texto descriptivo */}
-      <section className="hero-femenil">
-        <div className="hero-overlay">
-          <div className="hero-text">
-            <h1>Highlights</h1>
-            <p>Disfruta los mejores highlights de Chivas</p>
-          </div>
+    <section className="hero-femenil" style={{ backgroundImage: `url(${highlights})` }}>
+      <div className="hero-overlay">
+        <div className="hero-text">
+          <h1>Highlights on field</h1>
+          <p>Disfruta los highlights de los partidos</p>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Cuadrícula de tarjetas de video */}
       <section className="seccion">

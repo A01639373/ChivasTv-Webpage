@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import Footer from '../Footer'; // o la ruta correcta según tu estructura
+import chivasMasc from '../../assets/img_seccion/ChivasVaronil.png'
+import Footer from "../Footer";
 
 
 const ChivasVaronil = () => {
@@ -28,15 +29,14 @@ const ChivasVaronil = () => {
 
   return (
     <>
-      {/* Hero superior con estilo promocional */}
-      <section className="hero-femenil">
-        <div className="hero-overlay">
-          <div className="hero-text">
-            <h1>Chivas Varonil</h1>
-            <p>Disfruta del contenido más exclusivo de chivas varonil.</p>
-          </div>
+    <section className="hero-femenil" style={{ backgroundImage: `url(${chivasMasc})` }}>
+      <div className="hero-overlay">
+        <div className="hero-text">
+          <h1>Chivas Varonil</h1>
+          <p>Disfruta del contenido más exclusivo del equipo Varonil de Chivas</p>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Grid visual de videos */}
       <section className="seccion">

@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/Seccion.css';
 import { Link } from 'react-router-dom';
 import mockVideos from '../../data/videos_chivastv.json';
-import Footer from '../Footer'; // o la ruta correcta según tu estructura
-
+import raices from '../../assets/Chivas_raices.png'
+import Footer from "../Footer";
 
 const Raíces = () => {
   const [videos, setVideos] = useState([]);
@@ -24,15 +24,14 @@ const Raíces = () => {
 
   return (
     <>
-      {/* Hero visual estilo DAZN */}
-      <section className="hero-femenil">
-        <div className="hero-overlay">
-          <div className="hero-text">
-            <h1>Raices</h1>
-            <p>Disfruta del contenido más exclusivo de Raices</p>
-          </div>
+    <section className="hero-femenil" style={{ backgroundImage: `url(${raices})` }}>
+      <div className="hero-overlay">
+        <div className="hero-text">
+          <h1>Raices</h1>
+          <p>Disfruta del contenido más exclusivo de Raices</p>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Grid de videos */}
       <section className="seccion">
